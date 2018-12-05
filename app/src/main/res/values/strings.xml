@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Real Estate</string>
+    <string name="txt_SignIp">Đăng nhập</string>
+    <string name="txt_UserName">Tên đăng nhập</string>
+    <string name="txt_Password">Mật khẩu</string>
+    <string name="txt_address">Địa chỉ</string>
+    <string name="txt_tiencoc">Tiền cọc</string>
+    <string name="txt_dautu">Đầu tư</string>
+    <string name="txt_tienmua">Tiền mua</string>
+    <string name="txt_setting">Cài đặt</string>
+    <string name="txt_help">Hỗ trợ</string>
+    <string name="txt_langueage">Ngôn ngữ</string>
+    <string name="txt_submit">Submit</string>
+    <string name="txt_tiendautucuaban">Tiền đầu tư của bạn</string>
+    <string name="txt_sotiendautuconlai">Số tiền đầu tư tối đa</string>
+    <string name="pay_in">Nạp tiền</string>
+</resources>

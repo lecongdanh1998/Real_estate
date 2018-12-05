@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="HintTextError" parent="TextAppearance.Design.Error">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="colorAccent">@color/colorTextRed</item>
+        <item name="colorControlNormal">@color/colorTextRed</item>
+        <item name="colorControlActivated">@color/colorTextRed</item>
+    </style>
+    <style name="HintText" parent="TextAppearance.Design.Hint">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="colorAccent">@color/colorTextBlue</item>
+        <item name="colorControlNormal">@color/colorTextBlue</item>
+        <item name="colorControlActivated">@color/colorTextBlue</item>
+    </style>
+</resources>

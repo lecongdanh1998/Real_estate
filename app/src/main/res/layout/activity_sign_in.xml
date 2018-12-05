@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhite"
+    android:fillViewport="true"
+    tools:context=".View.User.SignInActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:focusableInTouchMode="true"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_SignIp"
+                android:textColor="@color/colorTextBlue"
+                android:textSize="@dimen/textSize_30sp"
+                android:gravity="center"
+                android:padding="@dimen/dimens_16dp"
+                android:fontFamily="@font/roboto_regular"
+
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_person_outline_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInput_username_signIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgUser"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    app:errorTextAppearance="@style/HintTextError"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_user_signIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textlines"
+                        android:backgroundTint="@color/colorBackgroundBlack"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="@string/txt_UserName"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/dimens_10dp"
+                        android:paddingBottom="@dimen/dimens_10dp"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        android:textCursorDrawable="@android:color/transparent"
+                        android:textSize="@dimen/textSize_16sp" />
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_lock_outline_black_24dp" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInput_password_signIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgPassword"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    app:errorTextAppearance="@style/HintTextError"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_password_signIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textlines"
+                        android:backgroundTint="@color/colorBackgroundBlack"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="@string/txt_Password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:paddingTop="@dimen/dimens_10dp"
+                        android:paddingBottom="@dimen/dimens_10dp"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        android:textCursorDrawable="@color/colorPrimary"
+                        android:textSize="@dimen/textSize_16sp" />
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_SignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:text="@string/txt_SignIp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textSize_16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
