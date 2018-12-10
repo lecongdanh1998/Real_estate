@@ -17,6 +17,7 @@ import vn.edu.poly.realestate.Presenter.PresenterUser.SignIn.PresenterReponsetoV
 import vn.edu.poly.realestate.Presenter.PresenterUser.SignIn.PresenterSignIn;
 import vn.edu.poly.realestate.R;
 import vn.edu.poly.realestate.View.MainActivity;
+import vn.edu.poly.realestate.View.Menu.MenuActivity;
 
 public class SignInActivity extends BaseActivity implements View.OnClickListener, PresenterReponsetoViewSignIn {
     String screen;
@@ -70,6 +71,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
         } else {
 
         }
+        finish();
         overridePendingTransition(R.anim.enter_from_left, R.anim.stay_still);
     }
 
@@ -90,7 +92,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onSignInSuccess() {
-        intentView(MainActivity.class);
+        intentView(MenuActivity.class);
     }
 
     @Override

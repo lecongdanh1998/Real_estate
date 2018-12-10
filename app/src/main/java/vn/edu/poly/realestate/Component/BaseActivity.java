@@ -27,6 +27,8 @@ public class BaseActivity extends AppCompatActivity {
     public static SharedPreferences.Editor editorScreen;
     public static SharedPreferences dataLoginInfo;
     public static SharedPreferences.Editor editorInfo;
+    public static SharedPreferences dataLoginUser;
+    public static SharedPreferences.Editor editorUser;
     View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private void initEditor() {
+        dataLoginUser = getSharedPreferences("data_User", MODE_PRIVATE);
         dataLoginScreen = getSharedPreferences("data_Screen", MODE_PRIVATE);
         dataLoginInfo = getSharedPreferences("data_Info", MODE_PRIVATE);
     }
@@ -68,6 +71,5 @@ public class BaseActivity extends AppCompatActivity {
             }
         };
     }
-
 
 }

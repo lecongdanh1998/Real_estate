@@ -14,11 +14,15 @@ public class PresenterDetails implements ModelReponsetoPresenterDetails {
     public PresenterDetails(Context context, PresenterReponsetoViewDetails callback) {
         this.context = context;
         this.callback = callback;
+        modelDetails = new ModelDetails(this, context);
     }
 
     public void ReceivedHanleData(String Strdangduoccoc, String Strtiencoc, String Strtienmua) {
-        modelDetails = new ModelDetails(this, context);
         modelDetails.handleFetchData(Strdangduoccoc, Strtiencoc, Strtienmua);
+    }
+
+    public void onBack(int requestcode) {
+        modelDetails.onBack(requestcode);
     }
 
 
@@ -26,5 +30,10 @@ public class PresenterDetails implements ModelReponsetoPresenterDetails {
     public void onDetailsFetchDataSuccess(String text, int requestCodeTextview) {
         callback.onDetailsFetchDataSuccess(text,requestCodeTextview);
 
+    }
+
+    @Override
+    public void onBack() {
+        callback.onBack();
     }
 }

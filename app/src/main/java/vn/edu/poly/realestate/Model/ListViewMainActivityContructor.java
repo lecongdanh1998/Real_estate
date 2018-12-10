@@ -3,7 +3,7 @@ package vn.edu.poly.realestate.Model;
 import java.io.Serializable;
 
 public class ListViewMainActivityContructor implements Serializable {
-    String avatar,username,images,title,address,deposit,depositBuy,Sell;
+    String avatar,username,images,title,address,deposit,depositBuy,Sell,Phone,Email;
 
     public ListViewMainActivityContructor() {
 
@@ -18,6 +18,35 @@ public class ListViewMainActivityContructor implements Serializable {
         this.deposit = deposit;
         this.depositBuy = depositBuy;
         Sell = sell;
+    }
+
+    public ListViewMainActivityContructor(String avatar, String username, String images, String title, String address, String deposit, String depositBuy, String sell, String phone, String email) {
+        this.avatar = avatar;
+        this.username = username;
+        this.images = images;
+        this.title = title;
+        this.address = address;
+        this.deposit = deposit;
+        this.depositBuy = depositBuy;
+        Sell = sell;
+        Phone = phone;
+        Email = email;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 
     public String getAvatar() {

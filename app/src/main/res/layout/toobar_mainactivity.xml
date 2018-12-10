@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_person_outline_white_24dp" />
+            android:src="@drawable/ic_arrow_back_black_24dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -28,6 +28,15 @@
             android:textColor="@color/colorTextWhite"
             android:textSize="@dimen/textSize_16sp"
             android:textStyle="bold" />
+        <ImageView
+            android:layout_marginRight="@dimen/dimens_16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/img_question_mainActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_help_outline_white_24dp"
+            />
 
     </RelativeLayout>
 </android.support.v7.widget.Toolbar>

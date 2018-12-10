@@ -16,7 +16,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/iconapp1"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -27,6 +27,15 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".View.User.SignInActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".View.DetailsMain.DetailsMainActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".View.User.WalletActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".View.Screen.SplashScreenActivity"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,8 +43,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.DetailsMain.DetailsMainActivity" />
-        <activity android:name=".View.User.WalletActivity"></activity>
+        <activity
+            android:name=".View.Menu.MenuActivity"
+            android:windowSoftInputMode="adjustResize" ></activity>
+        <activity
+            android:name=".View.Menu.HistoryDeposit.HistoryDepositActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
     </application>
 
 </manifest>

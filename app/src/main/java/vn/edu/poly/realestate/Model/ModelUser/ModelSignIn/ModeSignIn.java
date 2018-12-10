@@ -8,6 +8,7 @@ import java.util.HashMap;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import vn.edu.poly.realestate.Component.BaseActivity;
 import vn.edu.poly.realestate.Model.RetrofitClient.APIUtils;
 import vn.edu.poly.realestate.Model.RetrofitClient.DataClient;
 import vn.edu.poly.realestate.Model.RetrofitClient.User.User;
@@ -33,7 +34,7 @@ public class ModeSignIn {
         }
     }
 
-    public void SignIn(String email, String password) {
+    public void SignIn(final String email, String password) {
         DataClient dataClient = APIUtils.getData();
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("username", email);
@@ -48,6 +49,12 @@ public class ModeSignIn {
                 if (response.body() == null) {
                     Toast.makeText(context, "Email hoặc password không đúng", Toast.LENGTH_SHORT).show();
                 } else {
+                    BaseActivity.editorUser = BaseActivity.dataLoginUser.edit();
+                    BaseActivity.editorUser.putString("useremail",email);
+                    BaseActivity.editorUser.commit();
+                    BaseActivity.editorInfo = BaseActivity.dataLoginInfo.edit();
+                    BaseActivity.editorInfo.putInt("position", 0);
+                    BaseActivity.editorInfo.commit();
                     callback1.onSignInSuccess();
                 }
             }

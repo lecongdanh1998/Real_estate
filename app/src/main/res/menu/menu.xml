@@ -21,6 +21,10 @@
                 android:id="@+id/action_languae"
                 android:title="@string/txt_langueage"
                 app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/action_logout"
+                android:title="@string/txt_logout"
+                app:showAsAction="ifRoom" />
         </menu>
 
     </item>

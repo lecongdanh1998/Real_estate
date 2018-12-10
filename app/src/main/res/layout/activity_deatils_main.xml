@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackgroundWhite"
     android:elevation="@dimen/dimensElevation_5dp"
     android:focusableInTouchMode="true"
     tools:context=".View.DetailsMain.DetailsMainActivity">
@@ -24,6 +23,71 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimensHeight_Width_280dp">
+
+                <ImageView
+                    android:background="@color/colorBackgroundBlack"
+                    android:id="@+id/img_logo_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimensHeight_Width_200dp"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dimensHeight_Width_150dp"
+                        android:layout_height="@dimen/dimensHeight_Width_150dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/custombackgroundwhite"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:padding="@dimen/dimens_5dp">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="@dimen/dimensHeight_Width_150dp"
+                            android:layout_height="@dimen/dimensHeight_Width_150dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/coinsdol" />
+
+                        <RelativeLayout
+                            android:alpha="0.4"
+                            android:layout_width="@dimen/dimensHeight_Width_150dp"
+                            android:layout_height="@dimen/dimensHeight_Width_150dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/custombackgroundblack"></RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/dimensHeight_Width_150dp"
+                            android:layout_height="@dimen/dimensHeight_Width_150dp"
+                            android:layout_centerInParent="true">
+
+                            <TextView
+                                android:text="100,000"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:ellipsize="end"
+                                android:lines="1"
+                                android:drawableBottom="@drawable/ic_monetization_on_yellow_24dp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:gravity="center"
+                                android:textColor="@color/colorTextWhite"
+                                android:textSize="@dimen/textSize_25sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -85,103 +149,126 @@
             </RelativeLayout>
 
             <TextView
-                android:drawablePadding="@dimen/dimens_5dp"
-                android:drawableLeft="@drawable/coins"
-                android:textColor="@color/colorTextBlack"
                 android:id="@+id/txt_tiendautu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_margin="@dimen/dimens_16dp"
+                android:drawableLeft="@drawable/coins"
+                android:drawablePadding="@dimen/dimens_10dp"
                 android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorTextBlack"
                 android:textSize="@dimen/textSize_16sp" />
 
             <View
-                android:alpha="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:layout_marginLeft="@dimen/dimens_32dp"
                 android:layout_marginTop="@dimen/dimens_16dp"
                 android:layout_marginRight="@dimen/dimens_32dp"
-                android:layout_marginLeft="@dimen/dimens_32dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:alpha="0.2"
                 android:background="@color/colorBackgroundGray" />
+
             <TextView
-                android:drawablePadding="@dimen/dimens_5dp"
-                android:drawableLeft="@drawable/coins"
+                android:id="@+id/txt_songuoidautu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+                android:drawablePadding="@dimen/dimens_10dp"
+                android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/textSize_16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/dimens_32dp"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:layout_marginRight="@dimen/dimens_32dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:alpha="0.2"
+                android:background="@color/colorBackgroundGray" />
+
+            <TextView
                 android:id="@+id/txt_tiendaututoida"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_margin="@dimen/dimens_16dp"
+                android:drawableLeft="@drawable/coins"
+                android:drawablePadding="@dimen/dimens_10dp"
                 android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorTextBlack"
                 android:textSize="@dimen/textSize_16sp" />
 
             <View
-                android:alpha="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:layout_marginLeft="@dimen/dimens_32dp"
                 android:layout_marginTop="@dimen/dimens_16dp"
                 android:layout_marginRight="@dimen/dimens_32dp"
-                android:layout_marginLeft="@dimen/dimens_32dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:alpha="0.2"
                 android:background="@color/colorBackgroundGray" />
 
 
             <TextView
-                android:drawablePadding="@dimen/dimens_5dp"
-                android:drawableLeft="@drawable/depositpng"
-                android:textColor="@color/colorTextBlack"
                 android:id="@+id/txt_tiencoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_margin="@dimen/dimens_16dp"
+                android:drawableLeft="@drawable/depositpng"
+                android:drawablePadding="@dimen/dimens_10dp"
                 android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorTextBlack"
                 android:textSize="@dimen/textSize_16sp" />
 
             <View
-                android:alpha="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:layout_marginLeft="@dimen/dimens_32dp"
                 android:layout_marginTop="@dimen/dimens_16dp"
                 android:layout_marginRight="@dimen/dimens_32dp"
-                android:layout_marginLeft="@dimen/dimens_32dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:alpha="0.2"
                 android:background="@color/colorBackgroundGray" />
 
             <TextView
-                android:drawablePadding="@dimen/dimens_5dp"
-                android:drawableLeft="@drawable/coins"
-                android:textColor="@color/colorTextBlack"
                 android:id="@+id/txt_dangduoccoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_margin="@dimen/dimens_16dp"
+                android:drawableLeft="@drawable/coins"
+                android:drawablePadding="@dimen/dimens_10dp"
                 android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorTextBlack"
                 android:textSize="@dimen/textSize_16sp" />
 
             <View
-                android:alpha="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:layout_marginLeft="@dimen/dimens_32dp"
                 android:layout_marginTop="@dimen/dimens_16dp"
                 android:layout_marginRight="@dimen/dimens_32dp"
-                android:layout_marginLeft="@dimen/dimens_32dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:alpha="0.2"
                 android:background="@color/colorBackgroundGray" />
 
             <TextView
-                android:drawablePadding="@dimen/dimens_5dp"
-                android:drawableLeft="@drawable/hand"
-                android:textColor="@color/colorTextBlack"
                 android:id="@+id/txt_tienmua"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_margin="@dimen/dimens_16dp"
+                android:drawableLeft="@drawable/hand"
+                android:drawablePadding="@dimen/dimens_10dp"
                 android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorTextBlack"
                 android:textSize="@dimen/textSize_16sp" />
 
 
