@@ -2,8 +2,10 @@ package vn.edu.poly.realestate.View.User;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
+import android.text.method.PasswordTransformationMethod;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -60,6 +62,8 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
         edt_password_signIn = findViewById(R.id.edt_password_signIn);
         btn_SignIn = findViewById(R.id.btn_SignIn);
         edt_user_signIn = findViewById(R.id.edt_user_signIn);
+        edt_password_signIn.setTypeface(Typeface.DEFAULT);
+        edt_password_signIn.setTransformationMethod(new PasswordTransformationMethod());
     }
 
 

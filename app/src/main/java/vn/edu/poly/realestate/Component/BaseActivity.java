@@ -29,6 +29,8 @@ public class BaseActivity extends AppCompatActivity {
     public static SharedPreferences.Editor editorInfo;
     public static SharedPreferences dataLoginUser;
     public static SharedPreferences.Editor editorUser;
+    public static SharedPreferences dataInvestUpland;
+    public static SharedPreferences.Editor editorInvestUpland;
     View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class BaseActivity extends AppCompatActivity {
         dataLoginUser = getSharedPreferences("data_User", MODE_PRIVATE);
         dataLoginScreen = getSharedPreferences("data_Screen", MODE_PRIVATE);
         dataLoginInfo = getSharedPreferences("data_Info", MODE_PRIVATE);
+        dataInvestUpland = getSharedPreferences("data_Invest", MODE_PRIVATE);
     }
 
     private void InterNet() {

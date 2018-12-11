@@ -39,26 +39,33 @@ public class ModelDetails {
         decimalFormat = new DecimalFormat("###,###,###.#");
         double selldouble = Double.valueOf(Strtienmua);
         String sellStr = decimalFormat.format(selldouble).replace(".", ",");
-        //Sell
-        callback.onDetailsFetchDataSuccess(context.getResources().getString(R.string.txt_dautu) + " - " + context.getResources().getString(R.string.txt_tienmua) + " : " + sellStr + " Xu", requestCodeTVtienmua);
+        callback.onDetailsFetchDataSuccess(sellStr + " Xu", requestCodeTVtienmua);
+
         //Deposit
         Deposit = (long) (Sell * Double.parseDouble(Strdangduoccoc));
         String DepositStr = decimalFormat.format(Deposit).replace(".", ",");
         double Depositphantramdouble = Double.valueOf(Double.parseDouble(Strdangduoccoc) * 100);
         String DepositphantramStr = decimalFormat.format(Depositphantramdouble).replace(".", ",");
-        callback.onDetailsFetchDataSuccess(context.getResources().getString(R.string.txt_tiencoc) + " : " + DepositStr + " Xu" + " (" + DepositphantramStr + "%)", requestCodeTVdangduoccoc);
+        callback.onDetailsFetchDataSuccess(DepositStr + " Xu" + " (" + DepositphantramStr + "%)",
+                requestCodeTVdangduoccoc);
+
         //DepositBuy
         DepositBuy = (long) (Sell * (Double.parseDouble(Strtiencoc)));
         String DepositBuyStr = decimalFormat.format(DepositBuy).replace(".", ",");
         double DepositBuyphantramdouble = Double.valueOf(Double.parseDouble(Strtiencoc) * 100);
-        String DepositBuyphantramStr = decimalFormat.format(DepositBuyphantramdouble).replace(".", ",");
-        callback.onDetailsFetchDataSuccess(context.getResources().getString(R.string.txt_dautu) + " - " + context.getResources().getString(R.string.txt_tiencoc) + " : " + DepositBuyStr + " Xu" + " (" + DepositBuyphantramStr + "%)", requestCodeTVtiencoc);
+        String DepositBuyphantramStr = decimalFormat.format(DepositBuyphantramdouble).replace("" +
+                ".", ",");
+        callback.onDetailsFetchDataSuccess(DepositBuyStr + " Xu" + " (" + DepositBuyphantramStr +
+                "%)", requestCodeTVtiencoc);
+
         double phantramdautu = 100 - DepositBuyphantramdouble;
         String phantramdautuStr = decimalFormat.format(phantramdautu).replace(".", ",");
         long phantramdautuLong = (long) ((phantramdautu * DepositBuy) / DepositBuyphantramdouble);
         String phantramdautuLongStr = decimalFormat.format(phantramdautuLong).replace(".", ",");
-        callback.onDetailsFetchDataSuccess(context.getResources().getString(R.string.txt_sotiendautuconlai) + " : " + phantramdautuLongStr + " Xu" + " (" + phantramdautuStr + "%)", requestCodeTVdautu);
-        callback.onDetailsFetchDataSuccess(String.valueOf(phantramdautuLong), requestCodeTVphantram);
+        callback.onDetailsFetchDataSuccess("Đầu tư tối đa: " + phantramdautuLongStr + " Xu" + " (" + phantramdautuStr
+                + "%)", requestCodeTVdautu);
+        callback.onDetailsFetchDataSuccess(String.valueOf(phantramdautuLong),
+                requestCodeTVphantram);
     }
 
     public void onBack(int requestcode) {

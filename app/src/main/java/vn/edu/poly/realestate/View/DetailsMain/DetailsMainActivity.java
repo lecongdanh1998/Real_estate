@@ -130,7 +130,7 @@ public class DetailsMainActivity extends BaseActivity implements View.OnClickLis
         presenterDetails = new PresenterDetails(this, this);
         presenterDetails.ReceivedHanleData(Strdangduoccoc, Strtiencoc, Strtienmua);
 
-        txt_sokhachhangdadautuvao.setText(getResources().getString(R.string.txt_sokhachhangdadautuvao) + " : " + 5);
+        txt_sokhachhangdadautuvao.setText("5");
 
 
     }

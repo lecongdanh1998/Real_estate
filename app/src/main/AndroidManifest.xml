@@ -45,10 +45,12 @@
         </activity>
         <activity
             android:name=".View.Menu.MenuActivity"
-            android:windowSoftInputMode="adjustResize" ></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".View.Menu.HistoryDeposit.HistoryDepositActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".View.Franchise.FranchiseActivity" />
+        <activity android:name=".View.RealEstateInvestments.RealEstateInvestmentsActivity"></activity>
     </application>
 
 </manifest>

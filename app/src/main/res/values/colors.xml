@@ -12,4 +12,6 @@
     <color name="colorTextWhite">#FFFFFF</color>
     <color name="colorTextRed">#ff0000</color>
     <color name="colorBackgroundGray">#bcbab8</color>
+    <color name="colorPrimaryButton">#007bff</color>
+    <color name="colorDeleteButton">#dc3545</color>
 </resources>

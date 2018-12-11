@@ -1,5 +1,6 @@
 package vn.edu.poly.realestate.View.Menu;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +15,8 @@ import vn.edu.poly.realestate.Component.BaseActivity;
 import vn.edu.poly.realestate.Presenter.PresenterMenu.PresenterMenu;
 import vn.edu.poly.realestate.Presenter.PresenterMenu.PresenterReponsetoViewMenu;
 import vn.edu.poly.realestate.R;
+import vn.edu.poly.realestate.View.Franchise.FranchiseActivity;
+import vn.edu.poly.realestate.View.RealEstateInvestments.RealEstateInvestmentsActivity;
 
 public class MenuActivity extends BaseActivity implements View.OnClickListener,PresenterReponsetoViewMenu {
     LinearLayout LNL_user,LNT_history;
@@ -76,6 +79,8 @@ public class MenuActivity extends BaseActivity implements View.OnClickListener,P
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.LNT_account_menu:
+                Intent intent = new Intent(this, RealEstateInvestmentsActivity.class);
+                startActivity(intent);
                 break;
             case R.id.LNT_history_menu:
                 presenterMenu.initButtonIntent(1);
