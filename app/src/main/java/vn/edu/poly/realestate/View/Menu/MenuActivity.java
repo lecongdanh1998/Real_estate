@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.Toast;
 
 import vn.edu.poly.realestate.Component.BaseActivity;
@@ -16,12 +17,15 @@ import vn.edu.poly.realestate.Presenter.PresenterMenu.PresenterMenu;
 import vn.edu.poly.realestate.Presenter.PresenterMenu.PresenterReponsetoViewMenu;
 import vn.edu.poly.realestate.R;
 import vn.edu.poly.realestate.View.Franchise.FranchiseActivity;
+import vn.edu.poly.realestate.View.InfoAccount.InfoaccountActivity;
 import vn.edu.poly.realestate.View.RealEstateInvestments.RealEstateInvestmentsActivity;
 
-public class MenuActivity extends BaseActivity implements View.OnClickListener,PresenterReponsetoViewMenu {
-    LinearLayout LNL_user,LNT_history;
+public class MenuActivity extends BaseActivity implements View.OnClickListener, PresenterReponsetoViewMenu {
+    LinearLayout LNL_user, LNT_history, LNT_dangtinbatdongsan_menu, LNT_danhgiaduan_menu;
     PresenterMenu presenterMenu;
     Toolbar toolbar;
+    TableRow TBR_nguoidangtinbatdongsan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,20 +36,25 @@ public class MenuActivity extends BaseActivity implements View.OnClickListener,P
     }
 
     private void initOnClick() {
+        LNT_dangtinbatdongsan_menu.setOnClickListener(this);
         LNL_user.setOnClickListener(this);
         LNT_history.setOnClickListener(this);
+        LNT_danhgiaduan_menu.setOnClickListener(this);
     }
 
     private void initData() {
         setSupportActionBar(toolbar);
-        presenterMenu = new PresenterMenu(this,this);
+        presenterMenu = new PresenterMenu(this, this);
+        presenterMenu.setVisibility(TBR_nguoidangtinbatdongsan);
     }
 
     private void initControl() {
+        LNT_danhgiaduan_menu = findViewById(R.id.LNT_danhgiaduan_menu);
+        LNT_dangtinbatdongsan_menu = findViewById(R.id.LNT_dangtinbatdongsan_menu);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         LNL_user = findViewById(R.id.LNT_account_menu);
         LNT_history = findViewById(R.id.LNT_history_menu);
-
+        TBR_nguoidangtinbatdongsan = findViewById(R.id.TBR_dangtinbatdongsan_menu);
     }
 
     @Override
@@ -77,15 +86,26 @@ public class MenuActivity extends BaseActivity implements View.OnClickListener,P
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.LNT_account_menu:
-                Intent intent = new Intent(this, RealEstateInvestmentsActivity.class);
-                startActivity(intent);
+                intentView(InfoaccountActivity.class);
                 break;
             case R.id.LNT_history_menu:
-                presenterMenu.initButtonIntent(1);
+//                presenterMenu.initButtonIntent(1);
+                break;
+            case R.id.LNT_dangtinbatdongsan_menu:
+                presenterMenu.initButtonIntent(2);
+                break;
+            case R.id.LNT_danhgiaduan_menu:
+                presenterMenu.initButtonIntent(3);
                 break;
         }
+    }
+
+    private void intentView(Class c) {
+        Intent intent = new Intent(this, c);
+        startActivity(intent);
+        overridePendingTransition(R.anim.enter_from_left, R.anim.stay_still);
     }
 
     @Override
@@ -100,6 +120,11 @@ public class MenuActivity extends BaseActivity implements View.OnClickListener,P
 
     @Override
     public void onFetchLogout() {
+
+    }
+
+    @Override
+    public void onsetVisibility() {
 
     }
 }

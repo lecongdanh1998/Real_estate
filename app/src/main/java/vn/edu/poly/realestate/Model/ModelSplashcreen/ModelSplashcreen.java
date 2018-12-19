@@ -19,7 +19,7 @@ public class ModelSplashcreen {
     ModelReponsetoPresenterSplashcreen callback;
     Context context;
     private int SPLASH_DISPLAY_LENGTH = 2;
-    String useremail;
+    String access_token;
     Activity activity;
     public ModelSplashcreen(ModelReponsetoPresenterSplashcreen callback, Context context,Activity activity) {
         this.callback = callback;
@@ -46,9 +46,9 @@ public class ModelSplashcreen {
     }
 
     private void checkDataLogin() {
-        useremail = BaseActivity.dataLoginUser.getString("useremail", "");
-        if (new ValidateForm().validateTextEmpty(useremail) == false) {
-            Intent intent = new Intent(activity,MenuActivity.class);
+        access_token = BaseActivity.dataLoginUser.getString("access_token", "");
+        if (new ValidateForm().validateTextEmpty(access_token) == false) {
+            Intent intent = new Intent(activity,MainActivity.class);
             activity.startActivity(intent);
         } else {
             Intent mainIntent = new Intent(activity, SignInActivity.class);

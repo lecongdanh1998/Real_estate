@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_arrow_back_black_24dp" />
+            android:src="@drawable/ic_dehaze_black_24dp" />
 
         <TextView
             android:layout_width="match_parent"

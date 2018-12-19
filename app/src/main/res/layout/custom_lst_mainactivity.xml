@@ -4,187 +4,183 @@
     android:id="@+id/RelativeLayoutClick"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/dimens_10dp">
+    android:paddingTop="@dimen/dimens_10dp"
+    android:paddingBottom="@dimen/dimens_10dp">
 
-    <android.support.v7.widget.CardView
+
+    <LinearLayout
+        android:background="@color/colorBackgroundWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens_10dp"
-        app:cardCornerRadius="@dimen/dimensRadius_5dp">
+        android:orientation="vertical">
 
-        <LinearLayout
+
+        <RelativeLayout
+            android:id="@+id/RTLintent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="@dimen/dimensHeight_Width_200dp">
 
+            <ImageView
+                android:id="@+id/img_imagesBackgound_listview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimensHeight_Width_200dp"
+                android:scaleType="fitXY" />
 
             <RelativeLayout
-                android:id="@+id/RTLintent"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimensHeight_Width_200dp">
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/dimens_16dp">
 
-                <ImageView
-                    android:id="@+id/img_imagesBackgound_listview"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/avatar_user_main_listview"
+                    android:layout_width="@dimen/dimensHeight_Width_50dp"
+                    android:layout_height="@dimen/dimensHeight_Width_50dp"
+                    android:elevation="@dimen/dimensElevation_5dp" />
+
+                <TextView
+                    android:id="@+id/txt_name_listview_custom"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimensHeight_Width_200dp"
-                    android:scaleType="fitXY" />
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dimens_10dp"
+                    android:layout_toRightOf="@+id/avatar_user_main_listview"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_regular"
+                    android:lines="1"
+                    android:textSize="@dimen/textSize_18sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/LNTshow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dimens_16dp">
+
+            <TextView
+                android:id="@+id/txt_title_lisivew_custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_20dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/textSize_18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_address_lisivew_custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_10dp"
+                android:drawableLeft="@drawable/address"
+                android:drawablePadding="@dimen/dimens_10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="@dimen/textSize_18sp" />
+
+            <LinearLayout
+                android:id="@+id/LNThide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/txt_hotline_lisivew_custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    android:drawableLeft="@drawable/ic_phone_black_24dp"
+                    android:drawablePadding="@dimen/dimens_10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/textSize_18sp" />
+
+                <TextView
+                    android:id="@+id/txt_email_lisivew_custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    android:drawableLeft="@drawable/ic_email_black_24dp"
+                    android:drawablePadding="@dimen/dimens_10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/textSize_18sp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_margin="@dimen/dimens_16dp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/avatar_user_main_listview"
-                        android:layout_width="@dimen/dimensHeight_Width_50dp"
-                        android:layout_height="@dimen/dimensHeight_Width_50dp"
-                        android:elevation="@dimen/dimensElevation_5dp" />
+                    android:layout_marginTop="@dimen/dimens_10dp">
 
                     <TextView
-                        android:id="@+id/txt_name_listview_custom"
-                        android:layout_width="match_parent"
+                        android:id="@+id/txt_deposit_lisivew_custom"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/dimens_10dp"
-                        android:layout_toRightOf="@+id/avatar_user_main_listview"
+                        android:drawableLeft="@drawable/coins"
+                        android:drawablePadding="@dimen/dimens_10dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/roboto_regular"
-                        android:lines="1"
-                        android:textSize="@dimen/textSize_18sp"
-                        android:textStyle="bold"
-                        android:visibility="gone" />
+                        android:textSize="@dimen/textSize_18sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:layout_toRightOf="@+id/txt_deposit_lisivew_custom"
+                        android:src="@drawable/ic_monetization_on_black_24dp" />
                 </RelativeLayout>
-            </RelativeLayout>
 
-            <LinearLayout
-                android:id="@+id/LNTshow"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/dimens_16dp">
-
-                <TextView
-                    android:id="@+id/txt_title_lisivew_custom"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimens_20dp"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/roboto_regular"
-                    android:textColor="@color/colorTextBlack"
-                    android:textSize="@dimen/textSize_18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txt_address_lisivew_custom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimens_10dp"
-                    android:drawableLeft="@drawable/address"
-                    android:drawablePadding="@dimen/dimens_10dp"
-                    android:fontFamily="@font/roboto_regular"
-                    android:textSize="@dimen/textSize_18sp" />
-
-                <LinearLayout
-                    android:id="@+id/LNThide"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
+                    android:layout_marginTop="@dimen/dimens_10dp">
 
                     <TextView
-                        android:id="@+id/txt_hotline_lisivew_custom"
-                        android:layout_width="match_parent"
+                        android:id="@+id/txt_depositBuy_lisivew_custom"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimens_10dp"
-                        android:drawableLeft="@drawable/ic_phone_black_24dp"
+                        android:drawableLeft="@drawable/depositpng"
                         android:drawablePadding="@dimen/dimens_10dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/roboto_regular"
                         android:textSize="@dimen/textSize_18sp" />
 
-                    <TextView
-                        android:id="@+id/txt_email_lisivew_custom"
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimens_10dp"
-                        android:drawableLeft="@drawable/ic_email_black_24dp"
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:layout_toRightOf="@+id/txt_depositBuy_lisivew_custom"
+                        android:src="@drawable/ic_monetization_on_black_24dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_10dp">
+
+                    <TextView
+                        android:id="@+id/txt_Sell_lisivew_custom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/hand"
                         android:drawablePadding="@dimen/dimens_10dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/roboto_regular"
                         android:textSize="@dimen/textSize_18sp" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimens_10dp">
-
-                        <TextView
-                            android:id="@+id/txt_deposit_lisivew_custom"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/coins"
-                            android:drawablePadding="@dimen/dimens_10dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textSize="@dimen/textSize_18sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dimens_5dp"
-                            android:layout_toRightOf="@+id/txt_deposit_lisivew_custom"
-                            android:src="@drawable/ic_monetization_on_black_24dp" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimens_10dp">
-
-                        <TextView
-                            android:id="@+id/txt_depositBuy_lisivew_custom"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/depositpng"
-                            android:drawablePadding="@dimen/dimens_10dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textSize="@dimen/textSize_18sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dimens_5dp"
-                            android:layout_toRightOf="@+id/txt_depositBuy_lisivew_custom"
-                            android:src="@drawable/ic_monetization_on_black_24dp" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimens_10dp">
-
-                        <TextView
-                            android:id="@+id/txt_Sell_lisivew_custom"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/hand"
-                            android:drawablePadding="@dimen/dimens_10dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textSize="@dimen/textSize_18sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dimens_5dp"
-                            android:layout_toRightOf="@+id/txt_Sell_lisivew_custom"
-                            android:src="@drawable/ic_monetization_on_black_24dp" />
-                    </RelativeLayout>
-                </LinearLayout>
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:layout_toRightOf="@+id/txt_Sell_lisivew_custom"
+                        android:src="@drawable/ic_monetization_on_black_24dp" />
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </LinearLayout>
 </RelativeLayout>

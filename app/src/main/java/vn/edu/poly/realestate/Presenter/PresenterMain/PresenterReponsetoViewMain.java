@@ -11,4 +11,5 @@ public interface PresenterReponsetoViewMain {
     void onFetchLogout();
     void onExit();
     void onShowDialogHelp();
+    void onButtonIntent();
 }

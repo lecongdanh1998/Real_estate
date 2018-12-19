@@ -7,6 +7,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Toast;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
+
 import java.util.ArrayList;
 
 import vn.edu.poly.realestate.Adapter.ListViewMainActivityAdapter;
@@ -14,6 +16,7 @@ import vn.edu.poly.realestate.Component.BaseActivity;
 import vn.edu.poly.realestate.Model.ListViewMainActivityContructor;
 import vn.edu.poly.realestate.Model.ModelMain.ModelMain;
 import vn.edu.poly.realestate.Model.ModelMain.ModelReponsetoPresenterMain;
+import vn.edu.poly.realestate.Model.RetrofitClient.Infodatadeposit.Data;
 import vn.edu.poly.realestate.R;
 import vn.edu.poly.realestate.View.MainActivity;
 
@@ -34,7 +37,7 @@ public class PresenterMain implements ModelReponsetoPresenterMain {
     public void ReceivedHanleData(){
         modelMain.handleFetchData();
     }
-    public void IntentData(ListViewMainActivityContructor contructor,int postion){
+    public void IntentData(Data contructor, int postion){
         modelMain.IntentData(contructor,postion);
     }
     public void Exit(int position){
@@ -49,7 +52,9 @@ public class PresenterMain implements ModelReponsetoPresenterMain {
     }
 
 
-
+    public void initButtonIntent(int requestcode){
+        modelMain.initButtonIntent(requestcode);
+    }
 
 
     @Override
@@ -77,6 +82,11 @@ public class PresenterMain implements ModelReponsetoPresenterMain {
     @Override
     public void onShowDialogHelp() {
         callback.onShowDialogHelp();
+    }
+
+    @Override
+    public void onButtonIntent() {
+        callback.onButtonIntent();
     }
 
 }

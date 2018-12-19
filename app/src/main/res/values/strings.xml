@@ -21,7 +21,41 @@
     <string name="txt_email">Email</string>
     <string name="txt_phone">Điện thoại</string>
     <string name="txt_ok">OK</string>
-
+    <string name="txt_songuoithamgia">Người tham gia đầu tư</string>
+    <string name="txt_timedangtin">Thời gian đăng tin</string>
+    <string name="txt_namekhachhang">Tên khách hàng</string>
+    <string name="txt_info">Thông tin</string>
+    <string name="txt_historycoins">Lịch sử nạp xu</string>
+    <string name="txt_historydeposit">Danh sách đầu tư</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_title">Tiêu đề</string>
+    <string name="txt_ward">Phường, xã</string>
+    <string name="txt_district">Quận, huyện</string>
+    <string name="txt_city">Thành phố</string>
+    <string name="txt_area">Diện tích</string>
+    <string name="txt_arearong">Chiều rộng</string>
+    <string name="txt_areadai">Chiều dài</string>
+    <string name="txt_price_buy">Giá mua</string>
+    <string name="txt_price_deposit">Giá cọc</string>
+    <string name="txt_price_sell">Giá bán</string>
+    <string name="txt_description">Miêu tả</string>
+    <string name="txt_image">Hình ảnh</string>
+    <string name="txt_Errortitle">Vui lòng nhập tiêu đề!</string>
+    <string name="txt_Errorward">Phường, xã</string>
+    <string name="txt_ErrorAddress">Vui lòng nhập địa chỉ!</string>
+    <string name="txt_Errordistrict">Quận, huyện</string>
+    <string name="txt_Errorcity">Thành phố</string>
+    <string name="txt_Errorarea">Vui lòng nhập diện tích!</string>
+    <string name="txt_Errorarearong">Chiều rộng</string>
+    <string name="txt_Errorareadai">Chiều dài</string>
+    <string name="txt_Errorprice_buy">Vui lòng nhập tiền mua!</string>
+    <string name="txt_Errorprice_deposit">Vui lòng nhập tiền cọc!</string>
+    <string name="txt_Errorprice_sell">Vui lòng nhập tiền bán!</string>
+    <string name="txt_Errordescription">Vui lòng nhập miêu tả!</string>
+    <string name="txt_Errorimage">Hình ảnh</string>
+    <string name="txt_danhsachchothamdinh">Danh sách chờ thẩm định</string>
+    <string name="txt_danhgia">Đánh giá</string>
+    <string name="txt_duyet">Duyệt</string>
+    <string name="txt_huy">Hủy</string>
 </resources>

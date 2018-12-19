@@ -7,39 +7,42 @@
     android:background="@color/colorBackgroundGray"
     android:orientation="vertical"
     tools:context=".View.Menu.MenuActivity">
+
     <include layout="@layout/toobar_menu" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
         <TableLayout
-            android:gravity="center"
-            android:layout_gravity="center"
             android:id="@+id/TableLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:padding="@dimen/textSize_16sp">
 
             <TableRow
+                android:id="@+id/TBR_thamgiadautu_menu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:id="@+id/LNT_account_menu"
-                    android:layout_gravity="center_horizontal"                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_width="@dimen/dimensHeight_Width_150dp"
                     android:layout_height="wrap_content"
-                    >
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <RelativeLayout
-                        android:elevation="@dimen/dimensElevation_5dp"
-                        android:layout_gravity="center"
                         android:layout_width="@dimen/dimensHeight_Width_100dp"
                         android:layout_height="@dimen/dimensHeight_Width_100dp"
                         android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
                         android:background="@drawable/custombackground"
+                        android:elevation="@dimen/dimensElevation_5dp"
                         android:padding="@dimen/dimens_10dp">
 
                         <RelativeLayout
@@ -60,10 +63,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:gravity="center"
                         android:layout_margin="@dimen/dimens_10dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
                         android:text="Tài khoản"
                         android:textColor="@color/colorTextWhite"
                         android:textSize="@dimen/textSize_16sp"
@@ -73,18 +76,18 @@
 
                 <LinearLayout
                     android:id="@+id/LNT_history_menu"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_width="@dimen/dimensHeight_Width_150dp"
                     android:layout_height="wrap_content"
-                    >
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
                     <RelativeLayout
-                        android:elevation="@dimen/dimensElevation_5dp"
-                        android:layout_gravity="center"
                         android:layout_width="@dimen/dimensHeight_Width_100dp"
                         android:layout_height="@dimen/dimensHeight_Width_100dp"
+                        android:layout_gravity="center"
                         android:background="@drawable/custombackground"
+                        android:elevation="@dimen/dimensElevation_5dp"
                         android:padding="@dimen/dimens_10dp">
 
                         <RelativeLayout
@@ -108,170 +111,34 @@
                         android:layout_centerHorizontal="true"
                         android:layout_margin="@dimen/dimens_10dp"
                         android:ellipsize="end"
-                        android:gravity="center"
                         android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
                         android:text="Danh sách bất động sản"
                         android:textColor="@color/colorTextWhite"
                         android:textSize="@dimen/textSize_16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </TableRow>
+
             <TableRow
+                android:id="@+id/TBR_dangtinbatdongsan_menu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:layout_gravity="center_horizontal"                    android:layout_weight="1"
-                    android:orientation="vertical"
+                    android:id="@+id/LNT_danhgiaduan_menu"
                     android:layout_width="@dimen/dimensHeight_Width_150dp"
                     android:layout_height="wrap_content"
-                    >
-
-                    <RelativeLayout
-                        android:elevation="@dimen/dimensElevation_5dp"
-                        android:layout_gravity="center"
-                        android:layout_width="@dimen/dimensHeight_Width_100dp"
-                        android:layout_height="@dimen/dimensHeight_Width_100dp"
-                        android:layout_centerHorizontal="true"
-                        android:background="@drawable/custombackground"
-                        android:padding="@dimen/dimens_10dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="@dimen/dimens_10dp">
-
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/imagesMainGridview3"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/ic_person_outline_white_24dp" />
-                        </RelativeLayout>
-
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_margin="@dimen/dimens_10dp"
-                        android:ellipsize="end"
-                        android:fontFamily="@font/roboto_regular"
-                        android:text="Lịch sử đầu tư"
-                        android:textColor="@color/colorTextWhite"
-                        android:textSize="@dimen/textSize_16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_gravity="center_horizontal"                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_width="@dimen/dimensHeight_Width_150dp"
-                    android:layout_height="wrap_content"
-                    >
-                    <RelativeLayout
-                        android:elevation="@dimen/dimensElevation_5dp"
-                        android:layout_gravity="center"
-                        android:layout_width="@dimen/dimensHeight_Width_100dp"
-                        android:layout_height="@dimen/dimensHeight_Width_100dp"
-                        android:background="@drawable/custombackground"
-                        android:padding="@dimen/dimens_10dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="@dimen/dimens_10dp">
-
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/imagesMainGridview4"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/ic_person_outline_white_24dp" />
-                        </RelativeLayout>
-
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_margin="@dimen/dimens_10dp"
-                        android:ellipsize="end"
-                        android:gravity="center"
-                        android:fontFamily="@font/roboto_regular"
-                        android:text="Hỗ trợ"
-                        android:textColor="@color/colorTextWhite"
-                        android:textSize="@dimen/textSize_16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-                <LinearLayout
-                    android:layout_gravity="center_horizontal"                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_width="@dimen/dimensHeight_Width_150dp"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <RelativeLayout
-                        android:elevation="@dimen/dimensElevation_5dp"
-                        android:layout_gravity="center"
-                        android:layout_width="@dimen/dimensHeight_Width_100dp"
-                        android:layout_height="@dimen/dimensHeight_Width_100dp"
-                        android:layout_centerHorizontal="true"
-                        android:background="@drawable/custombackground"
-                        android:padding="@dimen/dimens_10dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="@dimen/dimens_10dp">
-
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/imagesMainGridview5"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/ic_person_outline_white_24dp" />
-                        </RelativeLayout>
-
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_margin="@dimen/dimens_10dp"
-                        android:ellipsize="end"
-                        android:fontFamily="@font/roboto_regular"
-                        android:text="Lịch sử nạp xu"
-                        android:textColor="@color/colorTextWhite"
-                        android:textSize="@dimen/textSize_16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-
-                <LinearLayout
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_width="@dimen/dimensHeight_Width_150dp"
-                    android:layout_height="wrap_content"
-                    >
+                    android:orientation="vertical">
+
                     <RelativeLayout
-                        android:elevation="@dimen/dimensElevation_5dp"
-                        android:layout_gravity="center"
                         android:layout_width="@dimen/dimensHeight_Width_100dp"
                         android:layout_height="@dimen/dimensHeight_Width_100dp"
+                        android:layout_gravity="center"
                         android:background="@drawable/custombackground"
+                        android:elevation="@dimen/dimensElevation_5dp"
                         android:padding="@dimen/dimens_10dp">
 
                         <RelativeLayout
@@ -289,20 +156,67 @@
                     </RelativeLayout>
 
                     <TextView
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
                         android:layout_margin="@dimen/dimens_10dp"
                         android:ellipsize="end"
-                        android:gravity="center"
                         android:fontFamily="@font/roboto_regular"
-                        android:text="Thông tin cần thiết"
+                        android:gravity="center"
+                        android:text="Đánh giá dự án"
+                        android:textColor="@color/colorTextWhite"
+                        android:textSize="@dimen/textSize_16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/LNT_dangtinbatdongsan_menu"
+                    android:layout_width="@dimen/dimensHeight_Width_150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dimensHeight_Width_100dp"
+                        android:layout_height="@dimen/dimensHeight_Width_100dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/custombackground"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:padding="@dimen/dimens_10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/dimens_10dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/imagesMainGridview4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_person_outline_white_24dp" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/dimens_10dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
+                        android:text="Đăng tin bất động sản"
                         android:textColor="@color/colorTextWhite"
                         android:textSize="@dimen/textSize_16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </TableRow>
+
         </TableLayout>
 
     </ScrollView>

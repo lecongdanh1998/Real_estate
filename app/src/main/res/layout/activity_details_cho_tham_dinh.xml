@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".View.Menu.Menu_danhsachchothamdinh.Details.DetailsChoThamDinhActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundWhite"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppThemebackground">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager_details"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimensHeight_Width_250dp"
+                android:layout_gravity="bottom"
+                android:clipToPadding="false"
+                android:overScrollMode="never" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="pin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <ImageView
+                        android:id="@+id/img_back_member"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_16dp"
+                        android:src="@drawable/ic_arrow_back_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/txt_titlestatus_member"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toLeftOf="@+id/img_qr_user"
+                        android:layout_toRightOf="@id/img_back_member"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:lines="1"
+                        android:text="Chi Tiết"
+                        android:textColor="@color/colorTextWhite"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <ImageView
+                        android:id="@+id/img_qr_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:src="@drawable/ic_help_outline_white_24dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_title_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/textSize_25sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:drawablePadding="@dimen/dimens_10dp"
+                android:text="@string/txt_address"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/textSize_16sp" />
+
+            <TextView
+                android:id="@+id/txt_address_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimens_16dp"
+                android:layout_marginRight="@dimen/dimens_16dp"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/textSize_16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/dimens_32dp"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:layout_marginRight="@dimen/dimens_32dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:alpha="0.2"
+                android:background="@color/colorBackgroundGray" />
+
+            <TableLayout
+                android:id="@+id/TableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimens_16dp"
+                android:layout_marginRight="@dimen/dimens_16dp"
+                android:gravity="center">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/location"
+                        android:drawablePadding="@dimen/dimens_10dp"
+                        android:gravity="left"
+                        android:text="@string/txt_price_buy"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <TextView
+                        android:id="@+id/txt_buy_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <TextView
+                        android:id="@+id/txt_priceBuy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textSize="@dimen/textSize_16sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_16dp"
+                    android:layout_weight="1"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/location"
+                        android:drawablePadding="@dimen/dimens_10dp"
+                        android:gravity="left"
+                        android:text="@string/txt_price_deposit"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <TextView
+                        android:id="@+id/txt_deposit_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textSize="@dimen/textSize_16sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_16dp"
+                    android:layout_weight="1"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/location"
+                        android:drawablePadding="@dimen/dimens_10dp"
+                        android:gravity="left"
+                        android:text="@string/txt_price_sell"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <TextView
+                        android:id="@+id/txt_sell_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <TextView
+                        android:id="@+id/txt_priceSell"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textSize="@dimen/textSize_16sp" />
+                </TableRow>
+            </TableLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/dimens_32dp"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:layout_marginRight="@dimen/dimens_32dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:alpha="0.2"
+                android:background="@color/colorBackgroundGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimens_16dp"
+                android:layout_marginRight="@dimen/dimens_16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/txt_danhgia"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_16sp" />
+
+                <RatingBar
+                    android:id="@+id/rb_rating_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimens_32dp"
+                    android:layout_alignParentRight="true"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressDrawable="@drawable/ratingbar_custom"
+                    android:rating="5"
+                    android:stepSize="0.01" />
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/lst_details_Thamdinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:alpha="0.2"
+                android:background="@color/colorBackgroundBlack" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btn_Submit_danhgia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_border"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/txt_danhgia"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorTextWhite"
+                        android:textSize="@dimen/textSize_16sp" />
+                    <Button
+                        android:id="@+id/btn_Submit_duyet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_border"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/txt_duyet"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorTextWhite"
+                        android:textSize="@dimen/textSize_16sp" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/LNTlayoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/placeholder_bg1">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorBackgroundBlue"></View>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

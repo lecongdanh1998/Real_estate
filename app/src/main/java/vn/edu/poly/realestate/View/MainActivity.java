@@ -3,11 +3,14 @@ package vn.edu.poly.realestate.View;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -17,11 +20,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
+
 import java.util.ArrayList;
 
 import vn.edu.poly.realestate.Adapter.ListViewMainActivityAdapter;
 import vn.edu.poly.realestate.Component.BaseActivity;
 import vn.edu.poly.realestate.Model.ListViewMainActivityContructor;
+import vn.edu.poly.realestate.Model.RetrofitClient.Infodatadeposit.Data;
 import vn.edu.poly.realestate.Presenter.PresenterMain.PresenterMain;
 import vn.edu.poly.realestate.Presenter.PresenterMain.PresenterReponsetoViewMain;
 import vn.edu.poly.realestate.R;
@@ -31,22 +37,51 @@ import vn.edu.poly.realestate.View.User.WalletActivity;
 public class MainActivity extends BaseActivity implements View.OnClickListener, PresenterReponsetoViewMain {
     ListView listView;
     String screen;
-    ImageView img_wallet_MainActivity,img_question_Mainactivity;
+    ImageView img_wallet_MainActivity, img_question_Mainactivity;
     PresenterMain presenterMain;
     int positionListview;
+    private ShimmerFrameLayout mShimmerViewContainer, mShimmerViewContainer1;
+    int statusInternet;
+    private Handler handler;
+    private final int delay = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initControl();
-        initData();
         initSharedPre();
+        initData();
         initOnClick();
     }
 
+    Runnable runnable = new Runnable() {
+        public void run() {
+            if (statusInternet == 1) {
+                handler.removeCallbacks(runnable);
+            } else if (statusInternet == 0) {
+                onStart();
+                handler.postDelayed(this, delay);
+            }
+        }
+    };
+
     private void initSharedPre() {
         screen = dataLoginScreen.getString("ScreenMain", "");
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        statusInternet = dataInternet.getInt("status", 0);
+        if (statusInternet == 1) {
+            presenterMain.ReceivedHanleData();
+            handler.removeCallbacks(runnable);
+        } else if (statusInternet == 0) {
+            handler.postDelayed(runnable, delay);
+        }
     }
 
     @SuppressLint("NewApi")
@@ -54,8 +89,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(final AdapterView<?> parent, View view, final int position, long id) {
-                ListViewMainActivityContructor contructor
-                        = (ListViewMainActivityContructor) parent.getItemAtPosition(position);
+                Data contructor
+                        = (Data) parent.getItemAtPosition(position);
                 presenterMain.IntentData(contructor, position);
             }
         });
@@ -90,6 +125,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void initControl() {
+        mShimmerViewContainer1 = findViewById(R.id.shimmer_view_container1);
+        mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
         img_question_Mainactivity = findViewById(R.id.img_question_mainActivity);
         listView = findViewById(R.id.lst_MainActivity);
         img_wallet_MainActivity = findViewById(R.id.img_wallet_MainActivity);
@@ -97,8 +134,28 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     private void initData() {
         presenterMain = new PresenterMain(this, this, this);
-        presenterMain.ReceivedHanleData();
+        handler = new Handler();
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mShimmerViewContainer1.startShimmer();
+        mShimmerViewContainer.startShimmer();
+        if (statusInternet == 1) {
+            handler.removeCallbacks(runnable);
+        } else if (statusInternet == 0) {
+            handler.postDelayed(runnable, delay);
+        }
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mShimmerViewContainer.stopShimmer();
+        mShimmerViewContainer1.stopShimmer();
+        handler.removeCallbacks(runnable);
     }
 
     @Override
@@ -106,12 +163,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         presenterMain.Exit(positionListview);
     }
 
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_wallet_MainActivity:
-                onBackPressed();
+                presenterMain.initButtonIntent(1);
                 break;
             case R.id.img_question_mainActivity:
                 presenterMain.ShowDialogHelp();
@@ -123,9 +179,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     public void onFecthDataAdapter(ListViewMainActivityAdapter adapter) {
         positionListview = dataLoginInfo.getInt("position", 3);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.mytransitionoad);
+        listView.startAnimation(animation);
         listView.setAdapter(adapter);
         listView.setSelection(positionListview);
         adapter.notifyDataSetChanged();
+        mShimmerViewContainer.stopShimmer();
+        mShimmerViewContainer.setVisibility(View.GONE);
+        mShimmerViewContainer1.stopShimmer();
+        mShimmerViewContainer1.setVisibility(View.GONE);
     }
 
     @Override
@@ -145,6 +207,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     public void onShowDialogHelp() {
+
+    }
+
+    @Override
+    public void onButtonIntent() {
 
     }
 

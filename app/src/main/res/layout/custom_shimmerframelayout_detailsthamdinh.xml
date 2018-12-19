@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dimens_16dp"
+    android:paddingLeft="@dimen/dimens_16dp"
+    android:paddingRight="@dimen/dimens_16dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/RTLintent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimensHeight_Width_200dp">
+
+            <View
+                android:background="@color/placeholder_bg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimensHeight_Width_200dp"
+                 />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <RatingBar
+                    android:id="@+id/rb_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.01" />
+
+                <View
+                    android:background="@color/placeholder_bg"
+                    android:id="@+id/txt_name_listview_custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dimens_10dp"
+                    android:layout_toRightOf="@+id/avatar_user_main_listview"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_regular"
+                    android:lines="1"
+                    android:textSize="@dimen/textSize_18sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/LNTshow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <View
+                android:background="@color/placeholder_bg"
+                android:id="@+id/txt_title_lisivew_custom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimens_20dp"
+                android:layout_marginTop="@dimen/dimens_20dp"
+                 />
+
+            <View
+                android:background="@color/placeholder_bg"
+                android:id="@+id/txt_address_lisivew_custom"
+                android:layout_width="@dimen/dimensHeight_Width_100dp"
+                android:layout_height="@dimen/dimens_20dp"
+                android:layout_marginTop="@dimen/dimens_10dp" />
+            <View
+                android:visibility="invisible"
+                android:background="@color/placeholder_bg"
+                android:layout_width="@dimen/dimensHeight_Width_100dp"
+                android:layout_height="@dimen/dimens_20dp"
+                android:layout_marginTop="@dimen/dimens_10dp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

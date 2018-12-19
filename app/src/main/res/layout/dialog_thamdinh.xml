@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_danhgia"
+        android:textSize="@dimen/textSize_20sp"
+        android:textColor="@color/colorTextBlack"
+        android:fontFamily="@font/roboto_medium"
+        android:layout_margin="@dimen/dimens_16dp"
+        />
+    <RatingBar
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dimens_16dp"
+        android:layout_marginRight="@dimen/dimens_16dp"
+        android:id="@+id/rb_rating_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:progressDrawable="@drawable/ratingbar_custom50dp"
+        android:stepSize="0.01" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_margin="@dimen/dimens_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_weight="1"
+            android:id="@+id/RLT_giamua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/imgprice_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/shoppingbag" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInput_price_buy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimens_5dp"
+                android:layout_toRightOf="@+id/imgprice_buy"
+                android:scrollbars="vertical"
+                android:textColorHint="@color/colorTextBlack"
+                app:errorTextAppearance="@style/HintTextError"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/HintText">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_price_buy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textlines"
+                    android:backgroundTint="@color/colorBackgroundBlack"
+                    android:cursorVisible="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="@string/txt_price_buy"
+                    android:imeOptions="actionNext"
+                    android:inputType="number|numberDecimal"
+                    android:paddingTop="@dimen/dimens_10dp"
+                    android:paddingBottom="@dimen/dimens_10dp"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    android:textCursorDrawable="@android:color/transparent"
+                    android:textSize="@dimen/textSize_16sp" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/imgprice_sell"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/euro" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInput_price_sell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimens_5dp"
+                android:layout_toRightOf="@+id/imgprice_sell"
+                android:scrollbars="vertical"
+                android:textColorHint="@color/colorTextBlack"
+                app:errorTextAppearance="@style/HintTextError"
+                app:hintEnabled="true"
+                app:hintTextAppearance="@style/HintText">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_price_sell"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textlines"
+                    android:backgroundTint="@color/colorBackgroundBlack"
+                    android:cursorVisible="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="@string/txt_price_sell"
+                    android:imeOptions="actionNext"
+                    android:inputType="number|numberDecimal"
+                    android:paddingTop="@dimen/dimens_10dp"
+                    android:paddingBottom="@dimen/dimens_10dp"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    android:textCursorDrawable="@android:color/transparent"
+                    android:textSize="@dimen/textSize_16sp" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:gravity="center">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btn_cancel_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/txt_huy"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textSize_16sp" />
+
+            <Button
+                android:id="@+id/btn_danhgia_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/txt_danhgia"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textSize_16sp" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

@@ -96,7 +96,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onSignInSuccess() {
-        intentView(MenuActivity.class);
+        intentView(MainActivity.class);
     }
 
     @Override

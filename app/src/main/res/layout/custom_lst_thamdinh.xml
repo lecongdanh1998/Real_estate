@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/RelativeLayoutClick"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dimens_10dp"
+    android:paddingBottom="@dimen/dimens_10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundWhite"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/RTLintent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimensHeight_Width_200dp">
+
+            <ImageView
+                android:id="@+id/img_imagesBackgound_listview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimensHeight_Width_200dp"
+                android:scaleType="fitXY" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:visibility="invisible"
+                    android:id="@+id/avatar_user_main_listview"
+                    android:layout_width="@dimen/dimensHeight_Width_50dp"
+                    android:layout_height="@dimen/dimensHeight_Width_50dp"
+                    android:elevation="@dimen/dimensElevation_5dp" />
+                <RatingBar
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/rb_rating"
+                    android:numStars="5"
+                    android:rating="3.5"
+                    android:stepSize="0.01"
+                    android:isIndicator="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:progressDrawable="@drawable/ratingbar_custom" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/LNTshow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dimens_16dp">
+
+            <TextView
+                android:id="@+id/txt_title_lisivew_custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_20dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/textSize_18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_address_lisivew_custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_10dp"
+                android:drawableLeft="@drawable/address"
+                android:drawablePadding="@dimen/dimens_10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="@dimen/textSize_18sp" />
+
+            <LinearLayout
+                android:id="@+id/LNThide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_10dp">
+
+                    <TextView
+                        android:id="@+id/txt_deposit_lisivew_custom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/coins"
+                        android:drawablePadding="@dimen/dimens_10dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textSize="@dimen/textSize_18sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

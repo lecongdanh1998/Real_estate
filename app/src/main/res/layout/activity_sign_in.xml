@@ -65,7 +65,7 @@
                         android:fontFamily="@font/roboto_regular"
                         android:hint="@string/txt_UserName"
                         android:imeOptions="actionNext"
-                        android:inputType="text"
+                        android:inputType="textEmailAddress"
                         android:paddingTop="@dimen/dimens_10dp"
                         android:paddingBottom="@dimen/dimens_10dp"
                         android:scrollbars="vertical"

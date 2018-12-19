@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".View.InfoAccount.InfoaccountActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:theme="@style/AppThemebackground">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <android.support.v7.widget.Toolbar
+                android:elevation="@dimen/dimensElevation_5dp"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorBackgroundBlue"
+                app:layout_collapseMode="pin">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/img_back_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_back_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/txt_title_details"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/img_back_info"
+                        android:layout_toLeftOf="@+id/img_question_infosActivity"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:lines="1"
+                        android:text="Thông tin nhân viên"
+                        android:textColor="@color/colorTextWhite"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <ImageView
+                        android:id="@+id/img_question_infosActivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:src="@drawable/ic_help_outline_white_24dp" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:fitsSystemWindows="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/viewPager_details"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/trump"
+                            android:scaleType="fitXY"
+                            android:layout_height="@dimen/dimensHeight_Width_280dp"
+                             />
+                        <RelativeLayout
+                            android:background="@color/colorBackgroundBlack"
+                            android:alpha="0.5"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimensHeight_Width_280dp"></RelativeLayout>
+                        <ImageView
+                            android:id="@+id/btn_gallery_info"
+                            android:layout_marginTop="@dimen/dimens_16dp"
+                            android:layout_toLeftOf="@+id/btn_camera_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_call_to_action_white_24dp"
+                            />
+                        <ImageView
+                            android:id="@+id/btn_camera_info"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="@dimen/dimens_16dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_photo_camera_white_24dp"
+                            />
+                        <RelativeLayout
+                            android:layout_centerInParent="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+                            <RelativeLayout
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/RLT1_info"
+                                android:layout_width="@dimen/dimensHeight_Width_150dp"
+                                android:layout_height="@dimen/dimensHeight_Width_150dp"
+                                android:background="@drawable/custombackgroundwhite"
+                                android:padding="@dimen/dimens_5dp">
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/img_avatar_info"
+                                    android:layout_width="@dimen/dimensHeight_Width_150dp"
+                                    android:layout_height="@dimen/dimensHeight_Width_150dp"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/trump" />
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_centerInParent="true"
+                                android:lines="1"
+                                android:drawablePadding="@dimen/dimens_10dp"
+                                android:textColor="@color/colorTextWhite"
+                                android:text="0964.297.275"
+                                android:layout_below="@+id/RLT1_info"
+                                android:id="@+id/txt_hotline_info"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimens_5dp"
+                                android:drawableLeft="@drawable/ic_phone_white_24dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textSize="@dimen/textSize_18sp" />
+
+                            <TextView
+                                android:layout_marginTop="@dimen/dimens_5dp"
+                                android:layout_centerInParent="true"
+                                android:textColor="@color/colorTextWhite"
+                                android:text="danhlcps06057@fpt.edu.vn"
+                                android:layout_below="@+id/txt_hotline_info"
+                                android:id="@+id/txt_email_info"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_email_white_24dp"
+                                android:drawablePadding="@dimen/dimens_10dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textSize="@dimen/textSize_18sp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:elevation="@dimen/dimensElevation_5dp"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorBackgroundWhite"
+                app:tabIndicatorColor="@color/colorBackgroundBlue"
+                app:tabSelectedTextColor="@color/colorBackgroundBlue" />
+            <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>

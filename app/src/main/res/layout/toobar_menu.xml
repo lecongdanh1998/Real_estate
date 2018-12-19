@@ -18,6 +18,7 @@
         <!--android:src="@drawable/ic_arrow_back_black_24dp" />-->
 
     <TextView
+        android:paddingLeft="@dimen/dimens_16dp"
         android:layout_centerInParent="true"
         android:id="@+id/txt_title_menu"
         android:layout_width="wrap_content"

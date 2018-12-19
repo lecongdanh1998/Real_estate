@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <GridView
+        android:id="@+id/grdImages"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:columnWidth="100dip"
+        android:gravity="center"
+        android:horizontalSpacing="4dip"
+        android:numColumns="auto_fit"
+        android:layout_above="@+id/btnSelect"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="2dip"/>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnSelect"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/dimens_16dp"
+        android:layout_marginRight="@dimen/dimens_16dp"
+        android:layout_marginLeft="@dimen/dimens_16dp"
+        android:textSize="@dimen/textSize_16sp"
+        android:fontFamily="@font/roboto_medium"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:text="Select"
+        android:background="@drawable/button_border"
+        android:textColor="@color/colorTextWhite"
+        />
+
+</RelativeLayout>

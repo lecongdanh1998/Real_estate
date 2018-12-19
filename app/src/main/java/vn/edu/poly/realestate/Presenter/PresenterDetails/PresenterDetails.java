@@ -25,6 +25,10 @@ public class PresenterDetails implements ModelReponsetoPresenterDetails {
         modelDetails.onBack(requestcode);
     }
 
+    public void initFetchData() {
+        modelDetails.initFetchDataId();
+    }
+
 
     @Override
     public void onDetailsFetchDataSuccess(String text, int requestCodeTextview) {
@@ -32,8 +36,22 @@ public class PresenterDetails implements ModelReponsetoPresenterDetails {
 
     }
 
+    public void ShowDialogHelp(){
+        modelDetails.ShowDialogHelp();
+    }
+
     @Override
     public void onBack() {
         callback.onBack();
+    }
+
+    @Override
+    public void onShowDialogHelp() {
+        callback.onShowDialogHelp();
+    }
+
+    @Override
+    public void onFetchDataId(String images,int requestcode) {
+        callback.onFetchDataId(images,requestcode);
     }
 }

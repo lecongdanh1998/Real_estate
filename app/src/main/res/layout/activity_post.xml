@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhite"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".View.Menu.Menu_nguoidangtinbatdongsan.Dangtinbatdongsan.PostActivity">
+
+    <include layout="@layout/toobar_post" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/title" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInput_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgtitle"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    app:errorTextAppearance="@style/HintTextError"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textlines"
+                        android:backgroundTint="@color/colorBackgroundBlack"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="@string/txt_title"
+                        android:imeOptions="actionDone"
+                        android:paddingTop="@dimen/dimens_10dp"
+                        android:paddingBottom="@dimen/dimens_10dp"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        android:textCursorDrawable="@android:color/transparent"
+                        android:textSize="@dimen/textSize_16sp" />
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgcity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/building" />
+
+                <TextView
+                    android:id="@+id/txt_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgcity"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/txt_city"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_16sp" />
+
+                <Spinner
+                    android:id="@+id/pioedittxt5_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_city"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgcity"
+                    android:drawSelectorOnTop="true"
+                    android:dropDownVerticalOffset="-53dp"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pioedittxt5_city"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgcity"
+                    android:background="@drawable/textlines"
+                    android:backgroundTint="@color/colorBackgroundBlack" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgdistrict"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/building" />
+
+                <TextView
+                    android:id="@+id/txt_district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgdistrict"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/txt_district"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_16sp" />
+
+                <Spinner
+                    android:id="@+id/pioedittxt5_district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_district"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgdistrict"
+                    android:drawSelectorOnTop="true"
+                    android:dropDownVerticalOffset="-53dp"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pioedittxt5_district"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgdistrict"
+                    android:background="@drawable/textlines"
+                    android:backgroundTint="@color/colorBackgroundBlack" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/building" />
+
+                <TextView
+                    android:id="@+id/txt_ward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgward"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/txt_ward"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_16sp" />
+
+                <Spinner
+                    android:id="@+id/pioedittxt5_ward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_ward"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgward"
+                    android:drawSelectorOnTop="true"
+                    android:dropDownVerticalOffset="-53dp"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pioedittxt5_ward"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgward"
+                    android:background="@drawable/textlines"
+                    android:backgroundTint="@color/colorBackgroundBlack" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgaddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/address" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInput_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgaddress"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    app:errorTextAppearance="@style/HintTextError"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textlines"
+                        android:backgroundTint="@color/colorBackgroundBlack"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="@string/txt_address"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/dimens_10dp"
+                        android:paddingBottom="@dimen/dimens_10dp"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        android:textCursorDrawable="@android:color/transparent"
+                        android:textSize="@dimen/textSize_16sp" />
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgarea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/analytics" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgarea"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/textInput_arearong"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dimens_10dp"
+                        android:layout_weight="1"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        app:errorTextAppearance="@style/HintTextError"
+                        app:hintEnabled="true"
+                        app:hintTextAppearance="@style/HintText">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_user_arearong"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:backgroundTint="@color/colorBackgroundBlack"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:hint="@string/txt_arearong"
+                            android:imeOptions="actionNext"
+                            android:inputType="number|numberDecimal"
+                            android:paddingTop="@dimen/dimens_10dp"
+                            android:paddingBottom="@dimen/dimens_10dp"
+                            android:scrollbars="vertical"
+                            android:textColorHint="@color/colorTextBlack"
+                            android:textCursorDrawable="@android:color/transparent"
+                            android:textSize="@dimen/textSize_16sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/textInput_areadai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dimens_5dp"
+                        android:layout_weight="1"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        app:errorTextAppearance="@style/HintTextError"
+                        app:hintEnabled="true"
+                        app:hintTextAppearance="@style/HintText">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_user_areadai"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:backgroundTint="@color/colorBackgroundBlack"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:hint="@string/txt_areadai"
+                            android:imeOptions="actionNext"
+                            android:inputType="number|numberDecimal"
+                            android:paddingTop="@dimen/dimens_10dp"
+                            android:paddingBottom="@dimen/dimens_10dp"
+                            android:scrollbars="vertical"
+                            android:textColorHint="@color/colorTextBlack"
+                            android:textCursorDrawable="@android:color/transparent"
+                            android:textSize="@dimen/textSize_16sp" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/textInput_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:layout_weight="1"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        app:errorTextAppearance="@style/HintTextError"
+                        app:hintEnabled="true"
+                        app:hintTextAppearance="@style/HintText">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/edt_user_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:backgroundTint="@color/colorBackgroundBlack"
+                            android:cursorVisible="true"
+                            android:focusable="false"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:hint="@string/txt_area"
+                            android:imeOptions="actionDone"
+                            android:inputType="number|numberDecimal"
+                            android:paddingTop="@dimen/dimens_10dp"
+                            android:paddingBottom="@dimen/dimens_10dp"
+                            android:scrollbars="vertical"
+                            android:textColorHint="@color/colorTextBlack"
+                            android:textCursorDrawable="@android:color/transparent"
+                            android:textSize="@dimen/textSize_16sp" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgprice_buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/shoppingbag" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInput_price_buy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgprice_buy"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    app:errorTextAppearance="@style/HintTextError"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_price_buy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textlines"
+                        android:backgroundTint="@color/colorBackgroundBlack"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="@string/txt_price_buy"
+                        android:imeOptions="actionNext"
+                        android:inputType="number|numberDecimal"
+                        android:paddingTop="@dimen/dimens_10dp"
+                        android:paddingBottom="@dimen/dimens_10dp"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        android:textCursorDrawable="@android:color/transparent"
+                        android:textSize="@dimen/textSize_16sp" />
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgprice_deposit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/purse" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInput_price_deposit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgprice_deposit"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    app:errorTextAppearance="@style/HintTextError"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_price_deposit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textlines"
+                        android:backgroundTint="@color/colorBackgroundBlack"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="@string/txt_price_deposit"
+                        android:imeOptions="actionNext"
+                        android:inputType="number|numberDecimal"
+                        android:paddingTop="@dimen/dimens_10dp"
+                        android:paddingBottom="@dimen/dimens_10dp"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        android:textCursorDrawable="@android:color/transparent"
+                        android:textSize="@dimen/textSize_16sp" />
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgprice_sell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/euro" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInput_price_sell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgprice_sell"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    app:errorTextAppearance="@style/HintTextError"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_price_sell"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textlines"
+                        android:backgroundTint="@color/colorBackgroundBlack"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="@string/txt_price_sell"
+                        android:imeOptions="actionNext"
+                        android:inputType="number|numberDecimal"
+                        android:paddingTop="@dimen/dimens_10dp"
+                        android:paddingBottom="@dimen/dimens_10dp"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        android:textCursorDrawable="@android:color/transparent"
+                        android:textSize="@dimen/textSize_16sp" />
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimens_16dp">
+
+                <ImageView
+                    android:id="@+id/imgdescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/hastag" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInput_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/imgdescription"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/colorTextBlack"
+                    app:errorTextAppearance="@style/HintTextError"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textlines"
+                        android:backgroundTint="@color/colorBackgroundBlack"
+                        android:cursorVisible="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="@string/txt_description"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/dimens_10dp"
+                        android:paddingBottom="@dimen/dimens_10dp"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        android:textCursorDrawable="@android:color/transparent"
+                        android:textSize="@dimen/textSize_16sp" />
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center"
+                        android:text="@string/txt_image"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <ImageView
+                        android:id="@+id/btn_camera_post"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_photo_camera_black_24dp" />
+
+                    <ImageView
+                        android:id="@+id/btn_gallery_post"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_call_to_action_black_24dp" />
+                </LinearLayout>
+                <GridView
+                    android:id="@+id/gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_16dp"
+                    android:gravity="center"
+                    android:horizontalSpacing="4dip"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="2dip" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Submid_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/txt_submit"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textSize_16sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

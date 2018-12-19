@@ -50,7 +50,19 @@
             android:name=".View.Menu.HistoryDeposit.HistoryDepositActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".View.Franchise.FranchiseActivity" />
-        <activity android:name=".View.RealEstateInvestments.RealEstateInvestmentsActivity"></activity>
+        <activity android:name=".View.RealEstateInvestments.RealEstateInvestmentsActivity" />
+        <activity android:name=".View.InfoAccount.InfoaccountActivity" />
+        <activity android:name=".View.Test.TestActivity" />
+        <activity
+            android:name=".View.Menu.Menu_nguoidangtinbatdongsan.Dangtinbatdongsan.PostActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".View.Menu.Menu_nguoidangtinbatdongsan.Dangtinbatdongsan.Gallery.Custom_galleryActivity" />
+        <activity android:name=".View.Menu.Menu_danhsachchothamdinh.ThamDinhActivity"
+            android:windowSoftInputMode="adjustResize"
+            />
+        <activity android:name=".View.Menu.Menu_danhsachchothamdinh.Details.DetailsChoThamDinhActivity"
+            android:windowSoftInputMode="adjustResize"
+            ></activity>
     </application>
 
 </manifest>

@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:elevation="@dimen/dimensElevation_5dp"
     android:focusableInTouchMode="true"
     tools:context=".View.DetailsMain.DetailsMainActivity">
 
-    <include
+    <RelativeLayout
         android:id="@+id/toobar_details"
-        layout="@layout/toobar_details" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/toobar_details" />
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btn_Submid_details"
         android:layout_below="@+id/toobar_details"
         android:fillViewport="true">
 
@@ -28,12 +29,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimensHeight_Width_280dp">
 
-                <ImageView
-                    android:id="@+id/img_logo_user"
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager_details"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimensHeight_Width_200dp"
-                    android:background="@drawable/bds"
-                    android:fitsSystemWindows="false" />
+                    android:layout_gravity="bottom"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -68,21 +70,32 @@
                             android:layout_height="@dimen/dimensHeight_Width_150dp"
                             android:layout_centerInParent="true">
 
-                            <TextView
-                                android:id="@+id/txt_tienmua"
-                                android:layout_width="wrap_content"
+                            <RelativeLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:drawableRight="@drawable/ic_monetization_on_yellow_24dp"
-                                android:drawablePadding="@dimen/dimens_16dp"
-                                android:ellipsize="end"
-                                android:fontFamily="@font/roboto_medium"
-                                android:gravity="center"
-                                android:lines="1"
-                                android:text="1,111"
-                                android:textColor="@color/colorTextWhite"
-                                android:textSize="@dimen/textSize_25sp"
-                                android:textStyle="bold" />
+                                android:layout_centerInParent="true">
+
+                                <TextView
+                                    android:id="@+id/txt_tienmua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:gravity="center"
+                                    android:lines="1"
+                                    android:textColor="@color/colorTextWhite"
+                                    android:textSize="@dimen/textSize_25sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginLeft="@dimen/dimens_5dp"
+                                    android:layout_toRightOf="@+id/txt_tienmua"
+                                    android:src="@drawable/ic_monetization_on_yellow_24dp" />
+                            </RelativeLayout>
                         </RelativeLayout>
                     </RelativeLayout>
                 </RelativeLayout>
@@ -146,13 +159,23 @@
                 android:textColor="@color/colorTextBlack"
                 android:textSize="@dimen/textSize_16sp" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/dimens_32dp"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:layout_marginRight="@dimen/dimens_32dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:alpha="0.2"
+                android:background="@color/colorBackgroundGray" />
+
             <TextView
                 android:id="@+id/txt_address_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_margin="@dimen/dimens_16dp"
-                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:drawableLeft="@drawable/address"
                 android:drawablePadding="@dimen/dimens_10dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="109 Hàm Nghi, TP Đông Hà, Quảng Trị (gần Chợ Phường 5)"
@@ -169,17 +192,28 @@
                 android:alpha="0.2"
                 android:background="@color/colorBackgroundGray" />
 
-            <TextView
-                android:id="@+id/txt_tiencoc"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_margin="@dimen/dimens_16dp"
-                android:drawableLeft="@drawable/depositpng"
-                android:drawablePadding="@dimen/dimens_10dp"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/colorTextBlack"
-                android:textSize="@dimen/textSize_16sp" />
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <TextView
+                    android:id="@+id/txt_tiencoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/depositpng"
+                    android:drawablePadding="@dimen/dimens_10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/txt_tiencoc"
+                    android:src="@drawable/ic_monetization_on_black_24dp" />
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -191,17 +225,28 @@
                 android:alpha="0.2"
                 android:background="@color/colorBackgroundGray" />
 
-            <TextView
-                android:id="@+id/txt_dangduoccoc"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_margin="@dimen/dimens_16dp"
-                android:drawableLeft="@drawable/coins"
-                android:drawablePadding="@dimen/dimens_10dp"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/colorTextBlack"
-                android:textSize="@dimen/textSize_16sp" />
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <TextView
+                    android:id="@+id/txt_dangduoccoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/coins"
+                    android:drawablePadding="@dimen/dimens_10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/txt_dangduoccoc"
+                    android:src="@drawable/ic_monetization_on_black_24dp" />
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -272,17 +317,28 @@
                 </RelativeLayout>
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/txt_tiendautu"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_margin="@dimen/dimens_16dp"
-                android:drawableLeft="@drawable/coins"
-                android:drawablePadding="@dimen/dimens_10dp"
-                android:fontFamily="@font/roboto_bold"
-                android:textColor="@color/colorTextBlack"
-                android:textSize="@dimen/textSize_16sp" />
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <TextView
+                    android:id="@+id/txt_tiendautu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/coins"
+                    android:drawablePadding="@dimen/dimens_10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/txt_tiendautu"
+                    android:src="@drawable/ic_monetization_on_black_24dp" />
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -294,57 +350,65 @@
                 android:alpha="0.2"
                 android:background="@color/colorBackgroundGray" />
 
-            <TextView
-                android:id="@+id/txt_tiendaututoida"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <TextView
+                    android:id="@+id/txt_tiendaututoida"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/coins"
+                    android:drawablePadding="@dimen/dimens_10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_5dp"
+                    android:layout_toRightOf="@+id/txt_tiendaututoida"
+                    android:src="@drawable/ic_monetization_on_black_24dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/dimens_32dp"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:layout_marginRight="@dimen/dimens_32dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:alpha="0.2"
+                android:background="@color/colorBackgroundGray" />
+
+            <Button
+                android:id="@+id/btn_Submid_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_margin="@dimen/dimens_16dp"
-                android:drawableLeft="@drawable/coins"
-                android:drawablePadding="@dimen/dimens_10dp"
+                android:background="@drawable/button_border"
                 android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/colorTextBlack"
+                android:gravity="center"
+                android:text="@string/txt_submit"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextWhite"
                 android:textSize="@dimen/textSize_16sp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="@dimen/dimens_32dp"
-                android:layout_marginTop="@dimen/dimens_16dp"
-                android:layout_marginRight="@dimen/dimens_32dp"
-                android:layout_marginBottom="@dimen/dimens_16dp"
-                android:alpha="0.2"
-                android:background="@color/colorBackgroundGray" />
-            <!--<TextView-->
-            <!--android:id="@+id/txt_tienmua"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_margin="@dimen/dimens_16dp"-->
-            <!--android:drawableLeft="@drawable/hand"-->
-            <!--android:drawablePadding="@dimen/dimens_10dp"-->
-            <!--android:fontFamily="@font/roboto_regular"-->
-            <!--android:textColor="@color/colorTextBlack"-->
-            <!--android:textSize="@dimen/textSize_16sp" />-->
-
-
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/btn_Submid_details"
+    <LinearLayout
+        android:id="@+id/LNTlayoutDetails"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="@dimen/dimens_16dp"
-        android:layout_marginRight="@dimen/dimens_16dp"
-        android:layout_marginBottom="@dimen/dimens_16dp"
-        android:background="@drawable/button_border"
-        android:fontFamily="@font/roboto_regular"
-        android:gravity="center"
-        android:text="@string/txt_submit"
-        android:textAllCaps="false"
-        android:textColor="@color/colorTextWhite"
-        android:textSize="@dimen/textSize_16sp" />
+        android:layout_height="match_parent"
+        android:background="@color/placeholder_bg1">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorBackgroundBlue"></View>
+    </LinearLayout>
+
 </RelativeLayout>
