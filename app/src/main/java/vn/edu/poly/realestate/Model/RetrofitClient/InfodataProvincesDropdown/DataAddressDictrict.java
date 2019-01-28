@@ -12,7 +12,15 @@ public class DataAddressDictrict {
     private String title;
 
     public DataAddressDictrict() {
+
     }
+
+
+    public DataAddressDictrict(int id, String title) {
+        this.id = id;
+        this.title = title;
+    }
+
 
     public int getId() {
         return id;

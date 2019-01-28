@@ -1,4 +1,4 @@
-package vn.edu.poly.sfriends.Util;
+package vn.edu.poly.realestate.Util;
 
 import android.content.res.Resources;
 

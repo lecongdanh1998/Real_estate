@@ -1,6 +1,10 @@
 package vn.edu.poly.realestate.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +28,8 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 import vn.edu.poly.realestate.Model.RetrofitClient.Infodatadeposit.Data;
 import vn.edu.poly.realestate.R;
+import vn.edu.poly.realestate.View.MainActivity;
+import vn.edu.poly.realestate.View.MapsActivity.MapsActivity;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
@@ -38,7 +44,6 @@ public class ListViewMainActivityAdapter extends BaseAdapter {
     int requesthideshow;
     private View.OnClickListener clickNe;
     ViewHolder viewHolder = null;
-
     public ListViewMainActivityAdapter(ArrayList<Data> arrayList, Context context, View.OnClickListener clickNe) {
         this.arrayList = arrayList;
         this.context = context;
@@ -66,17 +71,18 @@ public class ListViewMainActivityAdapter extends BaseAdapter {
 
         if (convertView == null) {
             viewHolder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.custom_lst_mainactivity, null);
-            viewHolder.avatar = convertView.findViewById(R.id.avatar_user_main_listview);
-            viewHolder.username = convertView.findViewById(R.id.txt_name_listview_custom);
-            viewHolder.title = convertView.findViewById(R.id.txt_title_lisivew_custom);
+            convertView = inflater.inflate(R.layout.custom_lst_mainactivity1, null);
+//            viewHolder.avatar = convertView.findViewById(R.id.avatar_user_main_listview);
+//            viewHolder.username = convertView.findViewById(R.id.txt_name_listview_custom);
+//            viewHolder.title = convertView.findViewById(R.id.txt_title_lisivew_custom);
             viewHolder.address = convertView.findViewById(R.id.txt_address_lisivew_custom);
-            viewHolder.deposit = convertView.findViewById(R.id.txt_deposit_lisivew_custom);
-            viewHolder.Email = convertView.findViewById(R.id.txt_email_lisivew_custom);
-            viewHolder.Phone = convertView.findViewById(R.id.txt_hotline_lisivew_custom);
-            viewHolder.depositBuy = convertView.findViewById(R.id.txt_depositBuy_lisivew_custom);
-            viewHolder.Sell = convertView.findViewById(R.id.txt_Sell_lisivew_custom);
+//            viewHolder.deposit = convertView.findViewById(R.id.txt_deposit_lisivew_custom);
+//            viewHolder.Email = convertView.findViewById(R.id.txt_email_lisivew_custom);
+//            viewHolder.Phone = convertView.findViewById(R.id.txt_hotline_lisivew_custom);
+//            viewHolder.depositBuy = convertView.findViewById(R.id.txt_depositBuy_lisivew_custom);
+//            viewHolder.Sell = convertView.findViewById(R.id.txt_Sell_lisivew_custom);
             viewHolder.images = convertView.findViewById(R.id.img_imagesBackgound_listview);
+            viewHolder.fab_address = convertView.findViewById(R.id.fab_address);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -85,29 +91,36 @@ public class ListViewMainActivityAdapter extends BaseAdapter {
 //        viewHolder.username.setText(contructor.getUsername());
 //        viewHolder.Email.setText(contructor.getEmail());
 //        viewHolder.Phone.setText(contructor.getPhone());
-        viewHolder.title.setText(contructor.getTitle());
+//        viewHolder.title.setText(contructor.getTitle());
         viewHolder.address.setText(contructor.getAddress());
-        double se = Double.valueOf(contructor.getPrice_sell());
-        Sell = (int) se;
-        decimalFormat = new DecimalFormat("###,###,###.#");
-        //Sell
-        double selldouble = Double.valueOf(Sell);
-        String sellStr = decimalFormat.format(selldouble).replace(".", ",");
-        viewHolder.Sell.setText(sellStr);
-//        Deposit
-        Deposit = (long) (Double.parseDouble(contructor.getPrice_deposit()));
-        double Depositdouble = Double.valueOf((Double.parseDouble(contructor.getPrice_deposit()) * 100) / (Double.parseDouble(contructor.getPrice_buy())));
-        String DepositStr = decimalFormat.format(Depositdouble).replace(".", ",");
-        double Depositdouble1 = Double.valueOf(Deposit);
-        String DepositStr1 = decimalFormat.format(Depositdouble1).replace(".", ",");
-        viewHolder.deposit.setText(DepositStr1 + " (" + DepositStr + "%)");
-        //DepositBuy
-        double DepositBuydouble = Double.valueOf((Double.parseDouble(contructor.getPrice_buy()) * 100) / (Double.parseDouble(contructor.getPrice_sell())));
-        String DepositBuyStr = decimalFormat.format(DepositBuydouble).replace(".", ",");
-        DepositBuy = (long) ((Double.parseDouble(contructor.getPrice_buy())));
-        double DepositBuydouble1 = Double.valueOf(DepositBuy);
-        String DepositBuyStr1 = decimalFormat.format(DepositBuydouble1).replace(".", ",");
-        viewHolder.depositBuy.setText(DepositBuyStr1);
+        viewHolder.fab_address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.setTag(contructor);
+                clickNe.onClick(v);
+            }
+        });
+//        double se = Double.valueOf(contructor.getPrice_sell());
+//        Sell = (int) se;
+//        decimalFormat = new DecimalFormat("###,###,###.#");
+//        //Sell
+//        double selldouble = Double.valueOf(Sell);
+//        String sellStr = decimalFormat.format(selldouble).replace(".", ",");
+//        viewHolder.Sell.setText(sellStr);
+////        Deposit
+//        Deposit = (long) (Double.parseDouble(contructor.getPrice_deposit()));
+//        double Depositdouble = Double.valueOf((Double.parseDouble(contructor.getPrice_deposit()) * 100) / (Double.parseDouble(contructor.getPrice_buy())));
+//        String DepositStr = decimalFormat.format(Depositdouble).replace(".", ",");
+//        double Depositdouble1 = Double.valueOf(Deposit);
+//        String DepositStr1 = decimalFormat.format(Depositdouble1).replace(".", ",");
+//        viewHolder.deposit.setText(DepositStr1 + " (" + DepositStr + "%)");
+//        //DepositBuy
+//        double DepositBuydouble = Double.valueOf((Double.parseDouble(contructor.getPrice_buy()) * 100) / (Double.parseDouble(contructor.getPrice_sell())));
+//        String DepositBuyStr = decimalFormat.format(DepositBuydouble).replace(".", ",");
+//        DepositBuy = (long) ((Double.parseDouble(contructor.getPrice_buy())));
+//        double DepositBuydouble1 = Double.valueOf(DepositBuy);
+//        String DepositBuyStr1 = decimalFormat.format(DepositBuydouble1).replace(".", ",");
+//        viewHolder.depositBuy.setText(DepositBuyStr1);
 //        Picasso.get()
 //                .load(contructor.getAvatar())
 //                .into(viewHolder.avatar);
@@ -140,5 +153,6 @@ public class ListViewMainActivityAdapter extends BaseAdapter {
         ImageView images;
         LinearLayout LNTshow, LNThide;
         RelativeLayout RLTintent;
+        ImageView fab_address;
     }
 }

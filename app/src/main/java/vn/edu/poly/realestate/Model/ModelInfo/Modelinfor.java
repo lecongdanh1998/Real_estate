@@ -27,4 +27,8 @@ public class Modelinfor {
         this.activity = (Activity) context;
     }
 
+    public void initButtonItent(int requestcode){
+        callback.onButtonIntent(requestcode);
+    }
+
 }

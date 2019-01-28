@@ -4,11 +4,18 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
@@ -21,6 +28,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.SupportMapFragment;
 
 import java.util.ArrayList;
 
@@ -31,30 +41,23 @@ import vn.edu.poly.realestate.Model.RetrofitClient.Infodatadeposit.Data;
 import vn.edu.poly.realestate.Presenter.PresenterMain.PresenterMain;
 import vn.edu.poly.realestate.Presenter.PresenterMain.PresenterReponsetoViewMain;
 import vn.edu.poly.realestate.R;
+import vn.edu.poly.realestate.View.DetailsMain.DetailsActivity;
 import vn.edu.poly.realestate.View.DetailsMain.DetailsMainActivity;
+import vn.edu.poly.realestate.View.MapsActivity.MapsActivity;
 import vn.edu.poly.realestate.View.User.WalletActivity;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener, PresenterReponsetoViewMain {
+public class MainActivity extends Fragment implements View.OnClickListener, PresenterReponsetoViewMain {
     ListView listView;
     String screen;
-    ImageView img_wallet_MainActivity, img_question_Mainactivity;
+    ImageView img_wallet_MainActivity, img_question_Mainactivity,img_filter;
     PresenterMain presenterMain;
     int positionListview;
     private ShimmerFrameLayout mShimmerViewContainer, mShimmerViewContainer1;
     int statusInternet;
     private Handler handler;
     private final int delay = 2000;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initControl();
-        initSharedPre();
-        initData();
-        initOnClick();
-    }
-
+    View view;
+    CardView cardview;
     Runnable runnable = new Runnable() {
         public void run() {
             if (statusInternet == 1) {
@@ -65,17 +68,31 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             }
         }
     };
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.activity_main, container, false);
+        initControl();
+        initSharedPre();
+        initData();
+        initOnClick();
+        return view;
+
+    }
+
+
 
     private void initSharedPre() {
-        screen = dataLoginScreen.getString("ScreenMain", "");
+        screen = BaseActivity.dataLoginScreen.getString("ScreenMain", "");
 
 
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
-        statusInternet = dataInternet.getInt("status", 0);
+        statusInternet = BaseActivity.dataInternet.getInt("status", 0);
         if (statusInternet == 1) {
             presenterMain.ReceivedHanleData();
             handler.removeCallbacks(runnable);
@@ -105,35 +122,32 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 positionListview = firstVisibleItem;
             }
         });
-
-        img_wallet_MainActivity.setOnClickListener(this);
-        img_question_Mainactivity.setOnClickListener(this);
-
+        img_filter.setOnClickListener(this);
 
     }
 
     private void intentView(Class c) {
-        Intent intent = new Intent(MainActivity.this, c);
+        Intent intent = new Intent(getContext(), c);
         startActivity(intent);
         if (screen.toString().equals("1")) {
 
         } else {
 
         }
-        finish();
-        overridePendingTransition(R.anim.enter_from_left, R.anim.stay_still);
+//        getActivity().finish();
+        getActivity().overridePendingTransition(R.anim.enter_from_left, R.anim.stay_still);
     }
 
     private void initControl() {
-        mShimmerViewContainer1 = findViewById(R.id.shimmer_view_container1);
-        mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
-        img_question_Mainactivity = findViewById(R.id.img_question_mainActivity);
-        listView = findViewById(R.id.lst_MainActivity);
-        img_wallet_MainActivity = findViewById(R.id.img_wallet_MainActivity);
+        mShimmerViewContainer1 = view.findViewById(R.id.shimmer_view_container1);
+        mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
+        listView = view.findViewById(R.id.lst_MainActivity);
+        cardview = getActivity().findViewById(R.id.cardview);
+        img_filter = view.findViewById(R.id.img_filter);
     }
 
     private void initData() {
-        presenterMain = new PresenterMain(this, this, this);
+        presenterMain = new PresenterMain(this, getContext(), getActivity());
         handler = new Handler();
     }
 
@@ -145,13 +159,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         if (statusInternet == 1) {
             handler.removeCallbacks(runnable);
         } else if (statusInternet == 0) {
-            handler.postDelayed(runnable, delay);
+//            handler.postDelayed(runnable, delay);
         }
 
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         mShimmerViewContainer.stopShimmer();
         mShimmerViewContainer1.stopShimmer();
@@ -159,18 +173,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     @Override
-    public void onBackPressed() {
-        presenterMain.Exit(positionListview);
+    public void onDestroy() {
+        super.onDestroy();
+        cardview.setVisibility(View.VISIBLE);
     }
+
+    //    @Override
+//    public void onBackPressed() {
+//        presenterMain.Exit(positionListview);
+//    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.img_wallet_MainActivity:
-                presenterMain.initButtonIntent(1);
-                break;
-            case R.id.img_question_mainActivity:
-                presenterMain.ShowDialogHelp();
+            case R.id.img_filter:
+                presenterMain.initButtonIntent(2);
                 break;
         }
     }
@@ -178,8 +195,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @SuppressLint("NewApi")
     @Override
     public void onFecthDataAdapter(ListViewMainActivityAdapter adapter) {
-        positionListview = dataLoginInfo.getInt("position", 3);
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.mytransitionoad);
+        positionListview = BaseActivity.dataLoginInfo.getInt("position", 3);
+        Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.mytransitionoad);
         listView.startAnimation(animation);
         listView.setAdapter(adapter);
         listView.setSelection(positionListview);
@@ -192,7 +209,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     public void onIntentData() {
-        intentView(DetailsMainActivity.class);
+        intentView(DetailsActivity.class);
     }
 
     @Override
@@ -213,6 +230,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     public void onButtonIntent() {
 
+    }
+
+    @Override
+    public void onAddress(String address) {
+        BaseActivity.editorAddress = BaseActivity.dataAddress.edit();
+        BaseActivity.editorAddress.putString("addressEditor",address);
+        BaseActivity.editorAddress.commit();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        MapsActivity fragment = new MapsActivity();
+        fragmentTransaction.replace(R.id.fragment_main, fragment);
+        fragmentTransaction.addToBackStack("MainActivity");
+        fragmentTransaction.commit();
+//        Toast.makeText(getContext(), address, Toast.LENGTH_SHORT).show();
     }
 
 

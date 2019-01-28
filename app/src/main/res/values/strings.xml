@@ -58,4 +58,14 @@
     <string name="txt_danhgia">Đánh giá</string>
     <string name="txt_duyet">Duyệt</string>
     <string name="txt_huy">Hủy</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="txt_tindang">Tin đăng</string>
+    <string name="txt_timbatdongsan">Tìm bất động sản</string>
+    <string name="txt_thongbao">Thông báo</string>
+    <string name="txt_taikhoan">Tài khoản</string>
+    <string name="txt_chonkhuvuc">Chọn khu vực tìm kiếm</string>
+    <string name="txt_dangupdate">Đang cập nhật</string>
+    <string name="txt_phongngu">Phòng ngủ</string>
+    <string name="txt_phongtam">Phòng tắm</string>
+    <string name="txt_locbatdongsan">Lọc bất động sản</string>
 </resources>

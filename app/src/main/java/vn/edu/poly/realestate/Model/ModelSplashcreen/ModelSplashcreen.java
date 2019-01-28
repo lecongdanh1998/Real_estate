@@ -13,6 +13,7 @@ import vn.edu.poly.realestate.Util.ValidateForm;
 import vn.edu.poly.realestate.View.MainActivity;
 import vn.edu.poly.realestate.View.Menu.MenuActivity;
 import vn.edu.poly.realestate.View.Screen.SplashScreenActivity;
+import vn.edu.poly.realestate.View.TabLayoutMain.TabLayOutActivity;
 import vn.edu.poly.realestate.View.User.SignInActivity;
 
 public class ModelSplashcreen {
@@ -48,7 +49,7 @@ public class ModelSplashcreen {
     private void checkDataLogin() {
         access_token = BaseActivity.dataLoginUser.getString("access_token", "");
         if (new ValidateForm().validateTextEmpty(access_token) == false) {
-            Intent intent = new Intent(activity,MainActivity.class);
+            Intent intent = new Intent(activity,TabLayOutActivity.class);
             activity.startActivity(intent);
         } else {
             Intent mainIntent = new Intent(activity, SignInActivity.class);

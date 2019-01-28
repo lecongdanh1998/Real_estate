@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorBackgroundBlue"
+    android:elevation="@dimen/dimensElevation_5dp">
+        <TextView
+            android:gravity="center"
+            android:id="@+id/txt_title_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimens_16dp"
+            android:layout_toRightOf="@+id/img_back_details"
+            android:layout_toLeftOf="@+id/img_question_detailsActivity"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:lines="1"
+            android:text="Danh sách thông báo"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textSize_16sp" />
+</RelativeLayout>

@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:rsb="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundWhite"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".View.FilterRealEstate.FilterActivity">
+
+    <include
+        android:id="@+id/toobar_filter"
+        layout="@layout/toobar_filter" />
+
+    <ScrollView
+        android:layout_above="@+id/CardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toobar_filter">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Loại bất động sản:"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/textSize_14sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/LNL_nharieng"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/fab_nharieng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimens_16dp"
+                            android:layout_marginTop="@dimen/dimens_16dp"
+                            android:layout_marginRight="@dimen/dimens_16dp"
+                            android:src="@drawable/houseblack"
+                            app:backgroundTint="@color/colorBackgroundWhite"
+                            app:layout_anchor="@id/bottom_app_bar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimens_16dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:text="Nhà riêng"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LNL_datnen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/fab_datnen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimens_16dp"
+                            android:layout_marginTop="@dimen/dimens_16dp"
+                            android:layout_marginRight="@dimen/dimens_16dp"
+                            android:src="@drawable/architectureblack"
+                            app:backgroundTint="@color/colorBackgroundWhite"
+                            app:layout_anchor="@id/bottom_app_bar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimens_16dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:text="Đất nền"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LNL_chungcu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/fab_chungcu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimens_16dp"
+                            android:layout_marginTop="@dimen/dimens_16dp"
+                            android:layout_marginRight="@dimen/dimens_16dp"
+                            android:src="@drawable/apartmentblack"
+                            app:backgroundTint="@color/colorBackgroundWhite"
+                            app:layout_anchor="@id/bottom_app_bar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimens_16dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:text="Chung cư/căn hộ"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LNT_datnenduan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/fab_datnenduan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimens_16dp"
+                            android:layout_marginTop="@dimen/dimens_16dp"
+                            android:layout_marginRight="@dimen/dimens_16dp"
+                            android:src="@drawable/designblack"
+                            app:backgroundTint="@color/colorBackgroundWhite"
+                            app:layout_anchor="@id/bottom_app_bar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dimens_16dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:text="Đất nền dự án"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:background="@drawable/spinnerbackground">
+
+                <Spinner
+                    android:id="@+id/Spinner_distric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_city"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:drawSelectorOnTop="true"
+                    android:dropDownVerticalOffset="0dp"
+                    android:spinnerMode="dialog" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Giá: "
+                android:textColor="@color/colorBackgroundBlack"
+                android:textSize="@dimen/textSize_14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <org.florescu.android.rangeseekbar.RangeSeekBar
+                    app:showLabels="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rangeSeekbar2"
+                    app:valuesAboveThumbs="false"
+                    />
+
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="2dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_margin="@dimen/dimens_16dp"-->
+                    <!--android:background="#f7931e" />-->
+
+
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_width="@dimen/dimensHeight_Width_100dp"-->
+                    <!--android:layout_height="@dimen/dimensHeight_Width_50dp"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_margin="@dimen/dimens_16dp"-->
+                    <!--app:cardElevation="@dimen/dimensElevation_5dp">-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent">-->
+
+                        <!--<EditText-->
+                            <!--android:id="@+id/ext_minprice"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:backgroundTint="@android:color/transparent"-->
+                            <!--android:fontFamily="@font/roboto_regular"-->
+                            <!--android:inputType="numberDecimal"-->
+                            <!--android:lines="1"-->
+                            <!--android:selectAllOnFocus="true"-->
+                            <!--android:text="1"-->
+                            <!--android:textColor="@color/colorTextBlack"-->
+                            <!--android:textSize="@dimen/dimens_16dp" />-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:layout_toRightOf="@id/ext_minprice"-->
+                            <!--android:fontFamily="@font/roboto_regular"-->
+                            <!--android:text="tỷ"-->
+                            <!--android:textColor="@color/colorTextBlack"-->
+                            <!--android:textSize="@dimen/dimens_16dp" />-->
+                    <!--</RelativeLayout>-->
+                <!--</android.support.v7.widget.CardView>-->
+
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_width="@dimen/dimensHeight_Width_100dp"-->
+                    <!--android:layout_height="@dimen/dimensHeight_Width_50dp"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_margin="@dimen/dimens_16dp"-->
+                    <!--app:cardElevation="@dimen/dimensElevation_5dp">-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent">-->
+
+                        <!--<EditText-->
+                            <!--android:id="@+id/ext_maxprice"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:backgroundTint="@android:color/transparent"-->
+                            <!--android:fontFamily="@font/roboto_regular"-->
+                            <!--android:inputType="numberDecimal"-->
+                            <!--android:lines="1"-->
+                            <!--android:selectAllOnFocus="true"-->
+                            <!--android:text="10"-->
+                            <!--android:textColor="@color/colorTextBlack"-->
+                            <!--android:textSize="@dimen/dimens_16dp" />-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:layout_toRightOf="@id/ext_maxprice"-->
+                            <!--android:fontFamily="@font/roboto_regular"-->
+                            <!--android:text="tỷ"-->
+                            <!--android:textColor="@color/colorTextBlack"-->
+                            <!--android:textSize="@dimen/dimens_16dp" />-->
+                    <!--</RelativeLayout>-->
+                <!--</android.support.v7.widget.CardView>-->
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/txt_area"
+                android:textColor="@color/colorBackgroundBlack"
+                android:textSize="@dimen/textSize_14sp" />
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    android:background="#f7931e" />
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="@dimen/dimensHeight_Width_100dp"
+                    android:layout_height="@dimen/dimensHeight_Width_50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    app:cardElevation="@dimen/dimensElevation_5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/ext_minarea"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:inputType="numberDecimal"
+                            android:lines="30"
+                            android:selectAllOnFocus="true"
+                            android:text="1"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/dimens_16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/ext_minarea"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="m²"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/dimens_16dp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="@dimen/dimensHeight_Width_100dp"
+                    android:layout_height="@dimen/dimensHeight_Width_50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    app:cardElevation="@dimen/dimensElevation_5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/ext_maxarea"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:inputType="numberDecimal"
+                            android:lines="1"
+                            android:selectAllOnFocus="true"
+                            android:text="150"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/dimens_16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/ext_maxarea"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="m²"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/dimens_16dp" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Bất động sản:"
+                    android:textColor="@color/colorBackgroundBlack"
+                    android:textSize="@dimen/textSize_14sp" />
+
+                <CheckBox
+                    android:id="@+id/checkboax_docquyen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimens_5dp"
+                    android:layout_toLeftOf="@id/checkboax_davban"
+                    android:text="Độc quyền" />
+
+                <CheckBox
+                    android:id="@+id/checkboax_davban"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Đã bán" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Phòng ngủ:"
+                    android:textColor="@color/colorBackgroundBlack"
+                    android:textSize="@dimen/textSize_14sp" />
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/spinnerbackground">
+
+                    <TableRow android:weightSum="5">
+
+                        <TextView
+                            android:id="@+id/txt_phongngu1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines2"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="1"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_phongngu2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines2"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="2"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_phongngu3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines2"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="3"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_phongngu4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines2"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="4"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_phongngu5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="5+"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </TableRow>
+
+                </TableLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Phòng tắm:"
+                    android:textColor="@color/colorBackgroundBlack"
+                    android:textSize="@dimen/textSize_14sp" />
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/spinnerbackground">
+
+                    <TableRow android:weightSum="5">
+
+                        <TextView
+                            android:id="@+id/txt_phongtam1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines2"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="1"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_phongtam2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines2"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="2"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_phongtam3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines2"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="3"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_phongtam4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines2"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="4"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_phongtam5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:padding="@dimen/padding_10"
+                            android:text="5+"
+                            android:textColor="@color/colorBackgroundBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </TableRow>
+
+                </TableLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:background="@drawable/spinnerbackground">
+
+                <Spinner
+                    android:id="@+id/Spinner_chonhuong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_city"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:drawSelectorOnTop="true"
+                    android:dropDownVerticalOffset="50dp"
+                    android:spinnerMode="dialog" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="Chọn lại"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextBlue"
+                android:textSize="@dimen/textSize_14sp" />
+
+            <View
+                android:alpha="0.5"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimens_10dp"
+                android:layout_marginBottom="@dimen/dimens_10dp"
+                android:background="@color/colorBackgroundGray"
+                android:gravity="center" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="Áp dụng"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextBlue"
+                android:textSize="@dimen/textSize_14sp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackgroundBlack"
+    android:orientation="vertical"
+    android:id="@+id/fragment_infocustomer"
+    android:background="@color/colorBackgroundWhite"
     >
-
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_margin="@dimen/dimens_16dp"
+        android:id="@+id/txt_dangtinbatdongsan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng tin bất động sản"
+        android:textColor="@color/colorTextBlue"
+        android:textSize="@dimen/textSize_20sp"
+        android:fontFamily="@font/roboto_medium"
+        />
+</LinearLayout>

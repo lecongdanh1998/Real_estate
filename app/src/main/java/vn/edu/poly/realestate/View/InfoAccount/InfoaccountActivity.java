@@ -2,11 +2,13 @@ package vn.edu.poly.realestate.View.InfoAccount;
 
 import android.annotation.SuppressLint;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,7 +20,8 @@ import vn.edu.poly.realestate.View.InfoAccount.historycoins.historycoins;
 import vn.edu.poly.realestate.View.InfoAccount.historycustomer.historycustomer;
 import vn.edu.poly.realestate.View.InfoAccount.infocustomer.infocustomer;
 
-public class InfoaccountActivity extends BaseActivity {
+public class InfoaccountActivity extends Fragment {
+    View view;
     public TabLayout tab_layout;
     public ViewPager mViewPager;
     ArrayList listFragment;
@@ -26,19 +29,23 @@ public class InfoaccountActivity extends BaseActivity {
     AdapterTabLayoutFrangment adapterTabLayoutFrangment;
     public TextView tabOne, tabTwo, tabThree;
     public int index_change;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_infoaccount);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.activity_infoaccount, container, false);
         initControl();
         initData();
         initOnClick();
         createTabIcons();
+        return view;
+
     }
 
     private void initControl() {
-        tab_layout = (TabLayout) findViewById(R.id.tabLayout);
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+        tab_layout = (TabLayout) view.findViewById(R.id.tabLayout);
+        mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
         tab_layout.setupWithViewPager(mViewPager);
     }
 
@@ -53,7 +60,7 @@ public class InfoaccountActivity extends BaseActivity {
         listTitle.add(getResources().getString(R.string.txt_historycoins));
         listTitle.add(getResources().getString(R.string.txt_historydeposit));
         adapterTabLayoutFrangment = new AdapterTabLayoutFrangment(
-                getSupportFragmentManager(),this, listTitle, listFragment
+                getChildFragmentManager(), getContext(), listTitle, listFragment
         );
 
         mViewPager.setAdapter(adapterTabLayoutFrangment);
@@ -119,19 +126,19 @@ public class InfoaccountActivity extends BaseActivity {
     }
 
     private void createTabIcons() {
-        tabOne = (TextView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.custom_tabsarena, null);
-        tabOne.setText(getApplicationContext().getResources().getString(R.string.txt_info));
-        tabOne.setTextColor(getApplicationContext().getResources().getColor(R.color.colorTextBlue));
+        tabOne = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.custom_tabsarena, null);
+        tabOne.setText(getContext().getResources().getString(R.string.txt_info));
+        tabOne.setTextColor(getContext().getResources().getColor(R.color.colorTextBlue));
         tab_layout.getTabAt(0).setCustomView(tabOne);
         // icon Hôm nay
-        tabTwo = (TextView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.custom_tabsarena, null);
-        tabTwo.setText(getApplicationContext().getResources().getString(R.string.txt_historycoins));
-        tabTwo.setTextColor(getApplicationContext().getResources().getColor(R.color.colorTextBlack));
+        tabTwo = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.custom_tabsarena, null);
+        tabTwo.setText(getContext().getResources().getString(R.string.txt_historycoins));
+        tabTwo.setTextColor(getContext().getResources().getColor(R.color.colorTextBlack));
         tab_layout.getTabAt(1).setCustomView(tabTwo);
         // icon Tham quan
-        tabThree = (TextView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.custom_tabsarena, null);
-        tabThree.setText(getApplicationContext().getResources().getString(R.string.txt_historydeposit));
-        tabThree.setTextColor(getApplicationContext().getResources().getColor(R.color.colorTextBlack));
+        tabThree = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.custom_tabsarena, null);
+        tabThree.setText(getContext().getResources().getString(R.string.txt_historydeposit));
+        tabThree.setTextColor(getContext().getResources().getColor(R.color.colorTextBlack));
         tab_layout.getTabAt(2).setCustomView(tabThree);
         mViewPager.setCurrentItem(index_change);
     }

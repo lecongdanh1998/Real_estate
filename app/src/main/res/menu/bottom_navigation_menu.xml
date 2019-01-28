@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/home"
+        android:id="@+id/navigation_action_tindang"
+        android:title="@string/txt_tindang"
+        />
+
+    <item
+        android:icon="@drawable/searching"
+        android:id="@+id/navigation_action_timbatdongsan"
+        android:title="@string/txt_timbatdongsan"
+        />
+    <item
+        android:icon="@drawable/notification"
+        android:id="@+id/navigation_action_notification"
+        android:title="@string/txt_thongbao"
+        />
+    <item
+        android:icon="@drawable/ic_person_outline_black_24dp"
+        android:id="@+id/navigation_action_account"
+        android:title="@string/txt_taikhoan"
+        />
+
+</menu>

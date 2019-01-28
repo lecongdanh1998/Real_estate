@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/chunhavabatdongsan"
+    android:layout_height="match_parent"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabfind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:layout_marginRight="@dimen/dimens_16dp"
+        android:src="@drawable/ic_expand_less_black1_24dp"
+        app:backgroundTint="@color/colorBackgroundWhite" />
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        app:cardElevation="@dimen/padding_10">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/placeholder_bg1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorBackgroundBlue"
+                    android:fontFamily="@string/read_less"
+                    android:gravity="center"
+                    android:text="Chủ nhà và Bất động sản"
+                    android:textColor="@color/colorTextWhite"
+                    android:textSize="@dimen/textSize_20sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Thông tin chủ nhà"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_14sp" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:text="Chính chủ" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackgroundWhite"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Họ và tên*"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <EditText
+                            android:gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Họ và tên"
+                            android:inputType="text"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:background="@color/placeholder_bg1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Số điện thoại*"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Số điện thoại"
+                            android:inputType="phone"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Thông tin bất động sản"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackgroundWhite"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Loại bất động sản"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <Spinner
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/spinner_loaibatdongsan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens_10dp"
+                            android:drawSelectorOnTop="true"
+                            android:dropDownVerticalOffset="0dp"
+                            android:spinnerMode="dialog" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:background="@color/placeholder_bg1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Diện tích sử dụng(m²)*"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Diện tích sử dụng(m²)*"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:background="@color/placeholder_bg1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Số tầng*"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Số tầng*"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:background="@color/placeholder_bg1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Hướng*"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <Spinner
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/spinner_chonhuong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens_10dp"
+                            android:drawSelectorOnTop="true"
+                            android:dropDownVerticalOffset="0dp"
+                            android:spinnerMode="dialog" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:background="@color/placeholder_bg1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Phòng ngủ*"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <Spinner
+                            android:paddingRight="@dimen/dimens_32dp"
+                            android:id="@+id/spinner_phongngu"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens_10dp"
+                            android:drawSelectorOnTop="true"
+                            android:dropDownVerticalOffset="0dp"
+                            android:spinnerMode="dialog" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:background="@color/placeholder_bg1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Phòng tắm*"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <Spinner
+                            android:paddingRight="@dimen/dimens_32dp"
+                            android:id="@+id/spinner_phongtam"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens_10dp"
+                            android:drawSelectorOnTop="true"
+                            android:dropDownVerticalOffset="0dp"
+                            android:spinnerMode="dialog" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:background="@color/placeholder_bg1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Giấy chủ quyền*"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <Spinner
+                            android:paddingRight="@dimen/dimens_32dp"
+                            android:id="@+id/spinner_giaychuquyen"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens_10dp"
+                            android:drawSelectorOnTop="true"
+                            android:dropDownVerticalOffset="0dp"
+                            android:spinnerMode="dialog" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens_16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="left"
+                        android:text="Giá*"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_14sp" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Có VAT"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Không"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackgroundWhite"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Giá(vnđ)"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:id="@+id/edt_gia"
+                            android:gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Giá(vnđ)"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:background="@color/placeholder_bg1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Giá thương lượng(vnđ)"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:id="@+id/edt_giathuongluong"
+                            android:gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Giá thương lượng(vnđ)"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:background="@color/placeholder_bg1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Đặt cọc(vnđ)"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <EditText
+                            android:imeOptions="actionNext"
+                            android:id="@+id/edt_datcoc"
+                            android:gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Đặt cọc(vnđ)"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens_16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="left"
+                        android:text="Hoa hồng*"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_14sp" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Tiền mặt"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Theo %"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackgroundWhite"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:elevation="@dimen/dimensElevation_5dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="left"
+                            android:text="Hoa hồng"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+
+                        <EditText
+                            android:gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:imeOptions="actionNext"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="@android:color/transparent"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Hoa hồng"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    android:elevation="@dimen/dimensElevation_5dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="Mô tả và tiện ích*"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackgroundWhite">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_16dp">
+
+                        <EditText
+                            android:gravity="left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:imeOptions="actionDone"
+                            android:singleLine="false"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Mô tả và tiện ích của cản nhà"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/textSize_14sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimens_32dp"
+                    android:background="@color/colorBackgroundWhite" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_border"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="Tiếp tục"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextWhite"
+                    android:textSize="@dimen/textSize_14sp" />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

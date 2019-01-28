@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".View.DangTinBatDongSan.DangTinBatDongSanActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:layout_marginBottom="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_location_on_black_36dp"
+        android:layout_gravity="center"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardview"
+            app:cardElevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/dimens_16dp"
+            android:background="@drawable/edittextbackground"
+            android:layout_height="@dimen/dimensHeight_Width_56dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edt_find"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimensHeight_Width_56dp"
+                    android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                    android:drawablePadding="@dimen/padding_10"
+                    android:elevation="10dp"
+                    android:imeOptions="actionDone"
+                    android:layout_toLeftOf="@+id/img_market"
+                    android:fontFamily="@font/roboto_regular"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="Nhập địa chỉ nhà cần bán..."
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/padding_10"
+                    android:paddingRight="@dimen/padding_10"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_14sp" />
+                <ImageView
+                    android:src="@drawable/ic_my_location_black_24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dimens_16dp"
+                    android:id="@+id/img_market"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardview_find"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardview"
+            android:layout_marginLeft="@dimen/dimens_16dp"
+            android:layout_marginRight="@dimen/dimens_16dp"
+            app:cardCornerRadius="@dimen/padding_10"
+            app:cardElevation="@dimen/padding_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_16dp"
+                    android:layout_marginTop="@dimen/dimens_16dp"
+                    android:layout_marginRight="@dimen/dimens_16dp"
+                    android:background="@drawable/spinnerbackground">
+
+                    <Spinner
+                        android:id="@+id/spinner_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_10dp"
+                        android:drawSelectorOnTop="true"
+                        android:dropDownVerticalOffset="50dp"
+                        android:spinnerMode="dialog" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_16dp"
+                        android:layout_marginTop="@dimen/dimens_16dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinnerbackground">
+
+                        <Spinner
+                            android:id="@+id/spinner_distric"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens_10dp"
+                            android:drawSelectorOnTop="true"
+                            android:dropDownVerticalOffset="0dp"
+                            android:spinnerMode="dialog" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="@dimen/dimens_16dp"
+                        android:layout_marginRight="@dimen/dimens_16dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinnerbackground">
+
+                        <Spinner
+                            android:id="@+id/spinner_ward"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens_10dp"
+                            android:drawSelectorOnTop="true"
+                            android:dropDownVerticalOffset="0dp"
+                            android:spinnerMode="dialog" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/edt_tenduong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    android:background="@drawable/spinnerbackground"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="Nhập tên đường..."
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:padding="@dimen/dimens_16dp"
+                    android:paddingLeft="@dimen/padding_10"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorTextBlack"
+                    android:textSize="@dimen/textSize_14sp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView_button_find"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="Hủy"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextBlue"
+                    android:textSize="@dimen/textSize_14sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    android:layout_marginBottom="@dimen/dimens_10dp"
+                    android:alpha="0.5"
+                    android:background="@color/colorBackgroundGray"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btn_continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="Tiếp tục"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextBlue"
+                    android:textSize="@dimen/textSize_14sp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@color/colorBackgroundBlack"
+        android:visibility="invisible"></RelativeLayout>
+
+    <include
+        android:id="@+id/chunhavabatdongsan"
+        layout="@layout/chunhavabatdongsan" />
+</android.support.design.widget.CoordinatorLayout>

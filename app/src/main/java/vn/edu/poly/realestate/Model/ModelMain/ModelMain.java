@@ -5,7 +5,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.Log;
@@ -47,6 +50,7 @@ import vn.edu.poly.realestate.Model.RetrofitClient.Infodatadeposit.Data;
 import vn.edu.poly.realestate.Model.RetrofitClient.Infodatadeposit.Infodatadeposit;
 import vn.edu.poly.realestate.Model.RetrofitClient.InsertData.InsertData;
 import vn.edu.poly.realestate.R;
+import vn.edu.poly.realestate.View.FilterRealEstate.FilterActivity;
 import vn.edu.poly.realestate.View.MainActivity;
 import vn.edu.poly.realestate.View.Menu.MenuActivity;
 import vn.edu.poly.realestate.View.Menu.Menu_danhsachchothamdinh.ThamDinhActivity;
@@ -72,6 +76,7 @@ public class ModelMain {
     }
 
     public void handleFetchData() {
+
         DataClient dataClient = APIUtils.getData();
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("status", "APPROVAL");
@@ -92,6 +97,13 @@ public class ModelMain {
 
             }
         });
+        clickNe = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Data data = (Data)view.getTag();
+                callback.onAddress(data.getAddress());
+            }
+        };
     }
 
     public void IntentData(Data contructor, int position) {
@@ -117,7 +129,7 @@ public class ModelMain {
                         BaseActivity.editorUser = BaseActivity.dataLoginUser.edit();
                         BaseActivity.editorUser.putString("access_token", "");
                         BaseActivity.editorUser.commit();
-                        intentView(SignInActivity.class);
+                        intentView(SignInActivity.class, 0);
                     }
                 });
         alertDialog2.setNegativeButton("Không",
@@ -130,11 +142,16 @@ public class ModelMain {
         callback.onFetchLogout();
     }
 
-    private void intentView(Class c) {
+    private void intentView(Class c, int requestcode) {
         Intent intent = new Intent(activity, c);
         activity.startActivity(intent);
-        activity.overridePendingTransition(R.anim.exit_on_right, R.anim.stay_still);
-        activity.finish();
+        if (requestcode == 1) {
+            activity.overridePendingTransition(R.anim.exit_on_right, R.anim.stay_still);
+            activity.finish();
+        } else if (requestcode == 2) {
+            activity.overridePendingTransition(R.anim.enter_from_right, R.anim.stay_still);
+        }
+
     }
 
 
@@ -190,7 +207,10 @@ public class ModelMain {
                     });
             alertDialog2.show();
         } else if (requestcode == 1) {
-            intentView(MenuActivity.class);
+            intentView(MenuActivity.class, requestcode);
+            callback.onButtonIntent();
+        } else if (requestcode == 2) {
+            intentView(FilterActivity.class, requestcode);
             callback.onButtonIntent();
         }
 

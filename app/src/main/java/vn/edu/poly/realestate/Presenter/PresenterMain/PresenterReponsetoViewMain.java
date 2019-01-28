@@ -12,4 +12,5 @@ public interface PresenterReponsetoViewMain {
     void onExit();
     void onShowDialogHelp();
     void onButtonIntent();
+    void onAddress(String address);
 }

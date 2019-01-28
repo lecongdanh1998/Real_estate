@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/placeholder_bg1"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".View.DetailsMain.DatLichXem.DatLichXemActivity">
+    <include
+        layout="@layout/toobar_datlichxem"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/placeholder_bg1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Thông tin tài khoản"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/textSize_16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackgroundWhite"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="left"
+                        android:text="Họ và tên"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Bùi Minh Nhựt"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/dimens_16dp"
+                    android:layout_marginRight="@dimen/dimens_16dp"
+                    android:background="@color/placeholder_bg1" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="left"
+                        android:text="Số điện thoại"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="0932030958"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/dimens_16dp"
+                    android:layout_marginRight="@dimen/dimens_16dp"
+                    android:background="@color/placeholder_bg1" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens_16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="left"
+                        android:text="Email"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:elevation="@dimen/dimensElevation_5dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="nhutbm@nks.vn"
+                        android:textColor="@color/colorTextBlack"
+                        android:textSize="@dimen/textSize_16sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimens_16dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Thông tin khách hàng"
+                android:textColor="@color/colorTextBlack"
+                android:textSize="@dimen/textSize_16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackgroundWhite"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dimens_16dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:layout_toRightOf="@+id/imgUser"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        app:errorTextAppearance="@style/HintTextError"
+                        app:hintEnabled="true"
+                        app:hintTextAppearance="@style/HintText">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:backgroundTint="@color/colorBackgroundGray"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Tên khách hàng"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:paddingTop="@dimen/dimens_10dp"
+                            android:paddingBottom="@dimen/dimens_10dp"
+                            android:scrollbars="vertical"
+                            android:textColorHint="@color/colorTextBlack"
+                            android:textCursorDrawable="@android:color/transparent"
+                            android:textSize="@dimen/textSize_16sp" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dimens_16dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:layout_toRightOf="@+id/imgUser"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        app:errorTextAppearance="@style/HintTextError"
+                        app:hintEnabled="true"
+                        app:hintTextAppearance="@style/HintText">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:backgroundTint="@color/colorBackgroundGray"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Số điện thoại"
+                            android:imeOptions="actionNext"
+                            android:inputType="phone"
+                            android:paddingTop="@dimen/dimens_10dp"
+                            android:paddingBottom="@dimen/dimens_10dp"
+                            android:scrollbars="vertical"
+                            android:textColorHint="@color/colorTextBlack"
+                            android:textCursorDrawable="@android:color/transparent"
+                            android:textSize="@dimen/textSize_16sp" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dimens_16dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:layout_toRightOf="@+id/imgUser"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        app:errorTextAppearance="@style/HintTextError"
+                        app:hintEnabled="true"
+                        app:hintTextAppearance="@style/HintText">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:backgroundTint="@color/colorBackgroundGray"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Thời gian đi xem"
+                            android:imeOptions="actionNext"
+                            android:inputType="datetime"
+                            android:paddingTop="@dimen/dimens_10dp"
+                            android:paddingBottom="@dimen/dimens_10dp"
+                            android:scrollbars="vertical"
+                            android:textColorHint="@color/colorTextBlack"
+                            android:textCursorDrawable="@android:color/transparent"
+                            android:textSize="@dimen/textSize_16sp" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dimens_16dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:layout_toRightOf="@+id/imgUser"
+                        android:scrollbars="vertical"
+                        android:textColorHint="@color/colorTextBlack"
+                        app:errorTextAppearance="@style/HintTextError"
+                        app:hintEnabled="true"
+                        app:hintTextAppearance="@style/HintText">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:backgroundTint="@color/colorBackgroundGray"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/roboto_regular"
+                            android:hint="Mã nhân viên giới thiệu"
+                            android:imeOptions="actionDone"
+                            android:inputType="numberDecimal"
+                            android:paddingTop="@dimen/dimens_10dp"
+                            android:paddingBottom="@dimen/dimens_10dp"
+                            android:scrollbars="vertical"
+                            android:textColorHint="@color/colorTextBlack"
+                            android:textCursorDrawable="@android:color/transparent"
+                            android:textSize="@dimen/textSize_16sp" />
+                    </android.support.design.widget.TextInputLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

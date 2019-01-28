@@ -45,7 +45,7 @@ public class AdapterPostAddressDictrict extends BaseAdapter {
         ViewHolder viewHolder = null;
         if(convertView == null){
             viewHolder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.custom_spinner,null);
+            convertView = inflater.inflate(R.layout.custom_spinner2,null);
             viewHolder.txttitle = convertView.findViewById(R.id.txt_title_issueby);
             convertView.setTag(viewHolder);
         }else {

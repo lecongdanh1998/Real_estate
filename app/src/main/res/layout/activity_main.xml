@@ -1,56 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/fragment_main"
     android:layout_height="match_parent"
-    android:background="@color/colorBackgroundGray"
-    android:orientation="vertical"
-    tools:context=".View.MainActivity">
-    <include layout="@layout/toobar_mainactivity" />
-    <RelativeLayout
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimens_10dp"
-                android:background="@color/colorBackgroundWhite">
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmer_view_container"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:shimmer_duration="2000">
-                    <include layout="@layout/custom_shimmerframelayout_main" />
-                </com.facebook.shimmer.ShimmerFrameLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimens_10dp"
-                android:background="@color/colorBackgroundWhite">
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroundGray"
+        android:orientation="vertical"
+        tools:context=".View.MainActivity">
 
-                <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/shimmer_view_container1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:shimmer_duration="2000">
+        <include layout="@layout/toobar_mainactivity" />
 
-                    <include layout="@layout/custom_shimmerframelayout_main" />
-                </com.facebook.shimmer.ShimmerFrameLayout>
-            </LinearLayout>
-        </LinearLayout>
-
-        <ListView
-            android:id="@+id/lst_MainActivity"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:divider="@null"></ListView>
-    </RelativeLayout>
-</LinearLayout>
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    android:background="@color/colorBackgroundWhite">
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/shimmer_view_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:shimmer_duration="2000">
+
+                        <include layout="@layout/custom_shimmerframelayout_main" />
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    android:background="@color/colorBackgroundWhite">
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/shimmer_view_container1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:shimmer_duration="2000">
+
+                        <include layout="@layout/custom_shimmerframelayout_main" />
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lst_MainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:divider="@null"></ListView>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

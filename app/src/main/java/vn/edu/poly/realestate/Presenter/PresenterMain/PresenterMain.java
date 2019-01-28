@@ -89,4 +89,9 @@ public class PresenterMain implements ModelReponsetoPresenterMain {
         callback.onButtonIntent();
     }
 
+    @Override
+    public void onAddress(String address) {
+        callback.onAddress(address);
+    }
+
 }

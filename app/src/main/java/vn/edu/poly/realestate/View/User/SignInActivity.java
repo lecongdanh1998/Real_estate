@@ -20,6 +20,7 @@ import vn.edu.poly.realestate.Presenter.PresenterUser.SignIn.PresenterSignIn;
 import vn.edu.poly.realestate.R;
 import vn.edu.poly.realestate.View.MainActivity;
 import vn.edu.poly.realestate.View.Menu.MenuActivity;
+import vn.edu.poly.realestate.View.TabLayoutMain.TabLayOutActivity;
 
 public class SignInActivity extends BaseActivity implements View.OnClickListener, PresenterReponsetoViewSignIn {
     String screen;
@@ -96,7 +97,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onSignInSuccess() {
-        intentView(MainActivity.class);
+        intentView(TabLayOutActivity.class);
     }
 
     @Override

@@ -28,6 +28,7 @@ import vn.edu.poly.realestate.Model.RetrofitClient.InfodataDetails.InfodataDetai
 import vn.edu.poly.realestate.Model.RetrofitClient.Infodatadeposit.Data;
 import vn.edu.poly.realestate.Model.RetrofitClient.Infodatadeposit.Infodatadeposit;
 import vn.edu.poly.realestate.R;
+import vn.edu.poly.realestate.View.DetailsMain.DatLichXem.DatLichXemActivity;
 import vn.edu.poly.realestate.View.MainActivity;
 import vn.edu.poly.realestate.View.User.SignInActivity;
 
@@ -111,6 +112,9 @@ public class ModelDetails {
                         }
                     });
             alertDialog2.show();
+        }if (requestcode == 2) {
+            intentView(DatLichXemActivity.class);
+            activity.overridePendingTransition(R.anim.enter_from_right, R.anim.stay_still);
         }
         callback.onBack();
 
@@ -119,8 +123,8 @@ public class ModelDetails {
     private void intentView(Class c) {
         Intent intent = new Intent(activity, c);
         activity.startActivity(intent);
-        activity.overridePendingTransition(R.anim.exit_on_right, R.anim.stay_still);
-        activity.finish();
+//        activity.overridePendingTransition(R.anim.exit_on_right, R.anim.stay_still);
+//        activity.finish();
     }
 
     public void ShowDialogHelp() {
